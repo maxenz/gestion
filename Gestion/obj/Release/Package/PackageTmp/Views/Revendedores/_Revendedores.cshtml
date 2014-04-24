@@ -1,0 +1,66 @@
+﻿@model PagedList.IPagedList<Gestion.Models.Revendedor>
+@using PagedList.Mvc;
+
+<div id="revendedoresList">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Listado de Revendedores</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-hover table-striped table-bordered tableIndex">
+                                <thead>
+                                    <tr>
+                                        <th class="col-lg-5 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Nombre)
+                                        </th>
+                                        <th class="col-lg-2 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Comision)
+                                        </th>
+                                        <th class="col-lg-3 centrado">
+                                            @Html.DisplayNameFor(model => model.First().BajoContrato)
+                                        </th>
+                                        <th class="col-lg-1 centrado"></th>
+                                        <th class="col-lg-1 centrado"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="col-lg-5 centrado">
+                                                @Html.DisplayFor(modelItem => item.Nombre)
+                                            </td>
+                                            <td class="col-lg-2 centrado">
+                                                @Html.DisplayFor(modelItem => item.Comision)
+                                            </td>
+                                            <td class="col-lg-3 centrado">
+                                                @Html.DisplayFor(modelItem => item.BajoContrato)
+                                            </td>
+                                            <td class="col-lg-1 centrado">
+                                                <a href="Revendedores/Edit/@item.ID"><span class="glyphicon glyphicon-edit azulOscuro"></span></a>
+                                            </td>
+                                            <td class="col-lg-1 centrado">
+                                                <a href="Revendedores/Delete/@item.ID" class="delete" data-gestion-target="#revendedoresList"><span class="glyphicon glyphicon-remove-circle rojo"></span></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+
+                            <div class="pagedList centrado" data-gestion-target="#revendedoresList">
+
+                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

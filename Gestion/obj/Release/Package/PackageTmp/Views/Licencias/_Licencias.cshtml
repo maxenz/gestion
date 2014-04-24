@@ -1,0 +1,77 @@
+﻿@model PagedList.IPagedList<Gestion.ViewModels.LicenciasEstados>
+@using PagedList.Mvc;
+
+<div id="licenciasList">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Listado de Licencias</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-hover table-striped table-bordered tableIndex">
+                                <thead>
+                                    <tr>
+                                        <th class="col-lg-3 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Serial)
+                                        </th>
+                                        <th class="col-lg-3 centrado">
+                                            @Html.DisplayNameFor(model => model.First().NumeroLlave)
+                                        </th>
+                                        <th class="col-lg-4 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Estado)
+                                        </th>
+                                        <th class="col-lg-1 centrado"></th>
+                                        <th class="col-lg-1 centrado"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="col-lg-3 centrado">
+                                                @Html.DisplayFor(modelItem => item.Serial)
+                                            </td>
+                                            <td class="col-lg-3 centrado">
+                                                @Html.DisplayFor(modelItem => item.NumeroLlave)
+                                            </td>
+                                            <td class="col-lg-4 centrado">
+                                                @if (item.Estado == "SIN ASIGNAR")
+                                                {
+                                                    <span style="color: green; font-weight: bold">
+                                                        @Html.DisplayFor(modelItem => item.Estado)
+                                                    </span>     
+                                                }
+                                                else
+                                                {
+                                                    <span style="color: red; font-weight: bold">
+                                                        @Html.DisplayFor(modelItem => item.Estado)
+                                                    </span>
+                                                }
+                                            </td>
+                                            <td class="col-lg-1 centrado">
+                                                <a href="Licencias/Edit/@item.ID"><span class="glyphicon glyphicon-edit azulOscuro"></span></a>
+                                            </td>
+                                            <td class="col-lg-1 centrado">
+                                                <a href="Licencias/Delete/@item.ID" class="delete" data-gestion-target="#licenciasList"><span class="glyphicon glyphicon-remove-circle rojo"></span></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+
+                            <div class="pagedList centrado" data-gestion-target="#licenciasList">
+
+                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

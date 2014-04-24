@@ -1,0 +1,34 @@
+﻿@model Gestion.Models.ClientesUsuario
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Registro de Usuarios</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+            @Html.DropDownListFor(model => model.UsuarioID, new SelectList(ViewBag.Usuarios, "UserId", "UserName"), new { @class = " selectpicker" })
+            @Html.ValidationMessageFor(model => model.UsuarioID)
+                    </div>
+                    <div class="col-md-4">
+            @Html.TextBoxFor(model => model.ShamanExpressID, new { @class = "form-control", @placeholder = "Shaman Express ID" })
+            @Html.ValidationMessageFor(model => model.ShamanExpressID)
+                    </div>
+               <div class="col-md-4">
+            @Html.TextBoxFor(model => model.ShamanFullID, new { @class = "form-control", @placeholder = "Shaman Full ID" })
+            @Html.ValidationMessageFor(model => model.ShamanFullID)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <input type="submit" value="Guardar" class="btn btn-block btn-primary btnSubmit" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

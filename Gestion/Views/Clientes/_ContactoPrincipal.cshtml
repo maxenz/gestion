@@ -1,0 +1,24 @@
+﻿@model Gestion.Models.Cliente
+
+<div class="row show-grid">
+    <div class="col-md-6">
+        @Html.TextBoxFor(model => model.Referencia, new { @class = "form-control", @placeholder = "Referencia" })
+        @Html.ValidationMessageFor(model => model.Referencia)
+    </div>
+    <div class="col-md-6">
+        @Html.TextBoxFor(model => model.ClientesContactos[0].Nombre, new { @class = "form-control", @placeholder = "Nombre" })
+        @Html.ValidationMessageFor((model => model.ClientesContactos[0].Nombre))
+    </div>
+</div>
+
+<div class="row show-grid">
+    <div class="col-md-6">
+        @Html.TextBoxFor(model => model.ClientesContactos[0].Email, new { @class = "form-control", @placeholder = "Email" })
+        @Html.ValidationMessageFor((model => model.ClientesContactos[0].Email))
+    </div>
+    <div class="col-md-6">
+        @Html.TextBoxFor(model => model.ClientesContactos[0].Telefono, new { @class = "form-control", @placeholder = "Telefono" })
+        @Html.ValidationMessageFor((model => model.ClientesContactos[0].Telefono))
+    </div>
+
+</div>

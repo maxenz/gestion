@@ -1,0 +1,28 @@
+﻿@model PagedList.IPagedList<Gestion.Models.Provincia>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    var paisID = ViewBag.PaisID;
+
+}
+
+@Html.Partial("_Header", Model)
+
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-4 ">
+        <div class="well well-sm">
+            <form action="@Url.Action("Index")" method="get" class="searchIndex" data-gestion-ajax="true" data-gestion-target="#provinciasList" >
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchName" name="searchName" placeholder="Buscar">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btnPrincipal" type="submit" name="search_button" id="search_button"><span class="glyphicon glyphicon-search"></span></button>
+                        <a href="Provincias/Create" class="btn btn-default btnPrincipal" id="new_button"><span class="glyphicon glyphicon-plus"></span></a>
+                        <a href="/Paises" class="btn btn-default btnPrincipal" id="back_button"><span class="glyphicon glyphicon-arrow-left"></span></a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_Provincias", Model)

@@ -1,0 +1,70 @@
+﻿@model PagedList.IPagedList<Gestion.Models.Video>
+@using PagedList.Mvc;
+
+<div id="videosList">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Listado de Tutoriales / Capacitaciones</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-hover table-striped table-bordered tableIndex">
+                                <thead>
+                                    <tr>
+                                        <th class="col-lg-4 centrado">
+                                            Tema
+                                        </th>
+                                        <th class="col-lg-4 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Fecha)
+                                        </th>
+                                        <th class="col-lg-3 centrado">
+                                            Carácter
+                                        </th>
+                                        <th class="col-lg-1 centrado"></th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="col-lg-4 centrado">
+                                                @Html.DisplayFor(modelItem => item.Descripcion)
+                                            </td>
+                                            <td class="col-lg-4 centrado">
+                                                @Html.DisplayFor(modelItem => item.Fecha)
+                                            </td>
+                                            @if (item.esPublico)
+                                            {
+                                                <td class="col-lg-3 centrado verde">Público</td>
+                                            }
+                                            else
+                                            {
+                                                <td class="col-lg-3 centrado rojo">Privado</td>
+                                            }
+
+                                            <td class="col-lg-1 centrado">
+                                                <a href="#@item.ID" class="various"><span class="glyphicon glyphicon-facetime-video"></span></a>
+                                            </td>
+                                           
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+
+                            <div class="pagedList centrado" data-gestion-target="#videosList">
+
+                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

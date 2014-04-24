@@ -1,0 +1,85 @@
+﻿@model PagedList.IPagedList<Gestion.ViewModels.TicketsPrincipal>
+@using PagedList.Mvc;
+
+<div id="misTicketsList">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Listado de Tickets</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-hover table-striped table-bordered tableIndex">
+                                <thead>
+                                    <tr>
+                                        <th class="col-lg-4 centrado">
+                                            @Html.DisplayNameFor(model => model.First().FechaHora)
+                                        </th>
+                                        <th class="col-lg-2 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Usuario)
+                                        </th>
+                                        <th class="col-lg-2 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Asunto)
+                                        </th>
+                                        <th class="col-lg-2 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Estado)
+                                        </th>
+
+                                        <th class="col-lg-2 centrado"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="col-lg-4 centrado">
+                                                @Html.DisplayFor(modelItem => item.FechaHora)
+                                            </td>
+                                            <td class="col-lg-2 centrado">
+                                                @Html.DisplayFor(modelItem => item.Usuario)
+                                            </td>
+                                            <td class="col-lg-2 centrado">
+                                                @Html.DisplayFor(modelItem => item.Asunto)
+                                            </td>
+                                            @if (item.Estado == "RESUELTO")
+                                            {
+                                                <td class="col-lg-2 centrado rojo negrita">
+                                                    @Html.DisplayFor(modelItem => item.Estado)
+                                                </td>
+                                            }
+                                            else if (item.Estado == "Respondido")
+                                            {
+                                                <td class="col-lg-2 centrado verde negrita">
+                                                    @Html.DisplayFor(modelItem => item.Estado)
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td class="col-lg-2 centrado">
+                                                    @Html.DisplayFor(modelItem => item.Estado)
+                                                </td>
+                                            }
+
+                                            <td class="col-lg-2 centrado">
+                                                <a href="MisTickets/Edit/@item.ID"><span class="glyphicon glyphicon-edit azulOscuro"></span></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+
+                            <div class="pagedList centrado" data-gestion-target="#misTicketsList">
+
+                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

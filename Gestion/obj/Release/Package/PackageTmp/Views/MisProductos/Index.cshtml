@@ -1,0 +1,80 @@
+﻿<div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+        <div class="well well-sm">
+            <p style="font-weight: bold; text-align: center; margin-top: 9px">Productos Disponibles</p>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 10px">
+    @if (ViewBag.Express == 1)
+    {
+                <div class="col-lg-4 col-lg-offset-2">
+                <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <i style="font-size: 5em" class="glyphicon glyphicon-circle-arrow-right"></i>
+                        </div>
+                        <div class="col-lg-8">
+                            <p style="margin-top: 25px; font-size: 1.3em;font-weight:bold">Shaman Express</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a href="http://paramedicapps.com.ar:57774/shamanweb/ingresar/login.php?v=express" target="_blank">Ingresar al sistema</a>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+
+        @if (ViewBag.Full == 1)
+    {
+                <div class="col-lg-4">
+                <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <i style="font-size: 5em" class="glyphicon glyphicon-circle-arrow-right"></i>
+                        </div>
+                        <div class="col-lg-8">
+                            <p style="margin-top: 25px; font-size: 1.3em;font-weight:bold">Shaman Full</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a href="http://paramedicapps.com.ar:57774/shamanweb/ingresar/login.php?v=full" target="_blank">Ingresar al sistema</a>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+
+    </div>
+
+
+
+
+        
+
+
+
+
+

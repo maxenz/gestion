@@ -1,0 +1,79 @@
+﻿@model PagedList.IPagedList<Gestion.Models.ClientesContacto>
+@using PagedList.Mvc;
+
+<div id="contactosList">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Listado de Contactos</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-hover table-striped table-bordered tableIndex">
+                                <thead>
+                                    <tr>
+                                        <th class="col-lg-3 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Cliente.RazonSocial)
+                                        </th>
+                                        <th class="col-lg-3 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Nombre)
+                                        </th>
+                                        <th class="col-lg-3 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Email)
+                                        </th>
+                                        <th class="col-lg-2 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Telefono)
+                                        </th>
+                                        <th class="col-lg-1 centrado">
+                                            @Html.DisplayNameFor(model => model.First().flgPrincipal)
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="col-lg-3 centrado">
+                                                @Html.DisplayFor(modelItem => item.Cliente.RazonSocial)
+                                            </td>
+                                            <td class="col-lg-3 centrado">
+                                                @Html.DisplayFor(modelItem => item.Nombre)
+                                            </td>
+                                            <td class="col-lg-3 centrado mail">
+                                                @Html.DisplayFor(modelItem => item.Email)
+                                            </td>
+                                            <td class="col-lg-2 centrado">
+                                                @Html.DisplayFor(modelItem => item.Telefono)
+                                            </td>
+                                            <td class="col-lg-1 centrado">
+                                                @{
+                                        if (item.flgPrincipal == 1)
+                                        {
+                                        
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                        }  
+                            
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+
+                            <div class="pagedList centrado" data-gestion-target="#contactosList">
+
+                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

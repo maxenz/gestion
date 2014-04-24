@@ -1,0 +1,59 @@
+﻿@model Gestion.Models.Ticket
+
+@{
+
+    var tkEventos = Model.TicketEventos.OrderBy(p => p.FechaCreacion);
+    var lastItemID = tkEventos.LastOrDefault().ID; 
+
+}
+
+<div id="listaEventos">
+
+    @foreach (var item in tkEventos)
+    {
+        if (item.TicketTipoEventoID == 1)
+        {
+        <div class="alert alert-success">
+            <h4>Consulta del @item.FechaCreacion.ToShortDateString() a las @item.FechaCreacion.ToShortTimeString()
+
+                @if (ViewBag.Editable == 1 && item.ID == lastItemID)
+                {
+                    <a href="#" data-ref="/MisTickets/EditTicketEvento/@item.ID" data-evento-id="@item.ID"  class="btnEditCreateEvento"><span class="glyphicon glyphicon-pencil" style="color: #468847; margin-left: 10px"></span></a>
+                }
+
+                @if(item.ImageData != null) {
+                    
+                    <a href="/MisTickets/GetImage/@item.ID" class="group single_image" rel="fancy">
+                        <span class="glyphicon glyphicon-picture" style="color: #468847; margin-left: 10px"></span>
+                    </a>                  
+                   
+                }
+       
+            </h4>
+            <p>@item.Descripcion</p>
+        </div>
+        }
+        else
+        {
+        <div class="alert alert-danger">
+            <h4>Respuesta del @item.FechaCreacion.ToShortDateString() a las @item.FechaCreacion.ToShortTimeString()
+
+                 @if (ViewBag.RtaEditable == 1 && item.ID == lastItemID)
+                {
+                    <a href="#" data-ref="/MisTickets/EditTicketEvento/@item.ID" data-evento-id="@item.ID"  class="btnEditCreateEvento"><span class="glyphicon glyphicon-pencil" style="color: #b94a48; margin-left: 10px"></span></a>
+                }
+
+                @if(item.ImageData != null) {
+                    
+                    <a href="/MisTickets/GetImage/@item.ID" class="group single_image" rel="fancy">
+                        <span class="glyphicon glyphicon-picture" style="color: #b94a48; margin-left: 10px"></span>
+                    </a>                  
+                   
+                }
+
+            </h4>
+            <p>@item.Descripcion</p>
+        </div>
+        }
+    }
+</div>

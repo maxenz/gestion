@@ -1,0 +1,139 @@
+C:\dev\gestion\Gestion\bin\Gestion.dll
+C:\dev\gestion\Gestion\bin\Gestion.pdb
+C:\dev\gestion\Gestion\bin\Antlr3.Runtime.dll
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.AspNet.dll
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.Core.dll
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.OAuth.dll
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.OpenId.dll
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\dev\gestion\Gestion\bin\EntityFramework.dll
+C:\dev\gestion\Gestion\bin\Microsoft.Web.Infrastructure.dll
+C:\dev\gestion\Gestion\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\dev\gestion\Gestion\bin\Newtonsoft.Json.dll
+C:\dev\gestion\Gestion\bin\System.Net.Http.Formatting.dll
+C:\dev\gestion\Gestion\bin\System.Web.Helpers.dll
+C:\dev\gestion\Gestion\bin\System.Web.Http.dll
+C:\dev\gestion\Gestion\bin\System.Web.Http.WebHost.dll
+C:\dev\gestion\Gestion\bin\System.Web.Mvc.dll
+C:\dev\gestion\Gestion\bin\System.Web.Optimization.dll
+C:\dev\gestion\Gestion\bin\System.Web.Razor.dll
+C:\dev\gestion\Gestion\bin\System.Web.WebPages.Deployment.dll
+C:\dev\gestion\Gestion\bin\System.Web.WebPages.dll
+C:\dev\gestion\Gestion\bin\System.Web.WebPages.Razor.dll
+C:\dev\gestion\Gestion\bin\WebActivatorEx.dll
+C:\dev\gestion\Gestion\bin\WebGrease.dll
+C:\dev\gestion\Gestion\bin\WebMatrix.Data.dll
+C:\dev\gestion\Gestion\bin\WebMatrix.WebData.dll
+C:\dev\gestion\Gestion\bin\Antlr3.Runtime.pdb
+C:\dev\gestion\Gestion\bin\Newtonsoft.Json.xml
+C:\dev\gestion\Gestion\bin\System.Web.Helpers.xml
+C:\dev\gestion\Gestion\bin\System.Web.Mvc.xml
+C:\dev\gestion\Gestion\bin\System.Web.Optimization.xml
+C:\dev\gestion\Gestion\bin\System.Web.Razor.xml
+C:\dev\gestion\Gestion\bin\System.Web.WebPages.xml
+C:\dev\gestion\Gestion\bin\System.Web.WebPages.Deployment.xml
+C:\dev\gestion\Gestion\bin\System.Web.WebPages.Razor.xml
+C:\dev\gestion\Gestion\bin\EntityFramework.xml
+C:\dev\gestion\Gestion\bin\System.Net.Http.Formatting.xml
+C:\dev\gestion\Gestion\bin\System.Web.Http.xml
+C:\dev\gestion\Gestion\bin\System.Web.Http.WebHost.xml
+C:\dev\gestion\Gestion\bin\WebMatrix.Data.xml
+C:\dev\gestion\Gestion\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\dev\gestion\Gestion\bin\WebMatrix.WebData.xml
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.AspNet.xml
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.Core.xml
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.OAuth.xml
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.OpenId.xml
+C:\dev\gestion\Gestion\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\dev\gestion\Gestion\obj\Debug\Gestion.csprojResolveAssemblyReference.cache
+C:\dev\gestion\Gestion\obj\Debug\Gestion.dll
+C:\dev\gestion\Gestion\obj\Debug\Gestion.pdb
+C:\dev\gestion\Gestion\bin\Microsoft.Web.Mvc.dll
+C:\dev\gestion\Gestion\bin\PagedList.dll
+C:\dev\gestion\Gestion\bin\PagedList.xml
+C:\dev\gestion\Gestion\bin\PagedList.Mvc.dll
+C:\dev\gestion\Gestion\bin\PagedList.Mvc.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\Gestion.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\Gestion.pdb
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\Antlr3.Runtime.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.Core.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\EntityFramework.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\Microsoft.Web.Mvc.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\Newtonsoft.Json.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\PagedList.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\PagedList.Mvc.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Net.Http.Formatting.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Abstractions.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.ApplicationServices.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.DynamicData.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Entity.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Extensions.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Helpers.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Http.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Http.WebHost.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Mvc.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Optimization.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Razor.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Routing.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Services.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.WebPages.Deployment.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.WebPages.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.WebPages.Razor.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\WebActivatorEx.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\WebGrease.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\WebMatrix.Data.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\WebMatrix.WebData.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\Antlr3.Runtime.pdb
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\Newtonsoft.Json.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\PagedList.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\PagedList.Mvc.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Helpers.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Mvc.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Optimization.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Razor.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.WebPages.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.WebPages.Deployment.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.WebPages.Razor.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\EntityFramework.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Net.Http.Formatting.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Http.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\System.Web.Http.WebHost.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\WebMatrix.Data.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\WebMatrix.WebData.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.Core.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.AddFechaRecontacto.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.AddComisionRevendedores.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.AddRevendedorID.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.RemoveForeignKeyRevendedor.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.ChangeRevendedorTipo.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.DeleteApodoUserProfile.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.AddNombreApellidoUsers.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.ChangeClientesUsuarios.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.AddTicketModels.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.ChangeEditable.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.RemoveEditable.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.AddImagesToTicketEvento.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.csproj.GenerateResource.Cache
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.pdb
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.AddCuentaCorrienteID.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.csprojResolveAssemblyReference.cache
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.ChangeClientesUsuariosSHAMANID.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.Valor2NotRequired.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.Videos.resources

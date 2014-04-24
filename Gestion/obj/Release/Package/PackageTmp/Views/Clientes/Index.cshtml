@@ -1,0 +1,45 @@
+﻿@model PagedList.IPagedList<Gestion.ViewModels.ClientesPrincipal>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Partial("_Header", Model)
+
+<div class="row">
+    <div class="col-lg-10 col-lg-offset-1 ">
+        <div class="well well-sm">
+
+            <form action="@Url.Action("Index")" method="get" id="frmSearchClientes" class="searchIndex" data-gestion-ajax="true" data-gestion-target="#clientesList" >
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="searchName" name="searchName" placeholder="Buscar">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default btnPrincipal" type="submit" name="search_button" id="search_button"><span class="glyphicon glyphicon-search"></span></button>
+                                <a href="Clientes/Create" class="btn btn-default btnPrincipal" id="new_button"><span class="glyphicon glyphicon-plus"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <select id="selTipoClientes" name="selTipoClientes" class="selectpicker">
+                            <option value="1">Todos</option>
+                            <option value="2">Vendidos</option>
+                            <option value="3">En Gesti&oacute;n</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <select id="selDatosSegunVista" name="selDatosSegunVista" class="selectpicker">
+                            <option value="1">Datos Principales</option>
+                            <option value="2">&Uacute;ltima Gesti&oacute;n</option>
+                        </select>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+@Html.Partial("_Clientes", Model)

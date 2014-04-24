@@ -1,0 +1,48 @@
+﻿@model Gestion.Models.ClientesTerminal
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Registro de Terminales</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.DropDownListFor(model => model.TipoTerminalID, new SelectList(ViewBag.TipoTerminales, "id", "descripcion"), new { @class = " selectpicker" })
+                        @Html.ValidationMessageFor(model => model.TipoTerminalID)
+                    </div>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(model => model.Referencia, new { @class = "form-control", @placeholder = "Referencia" })
+                        @Html.ValidationMessageFor(model => model.Referencia)
+                    </div>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(model => model.Valor1, new { @class = "form-control", @placeholder = "Valor 1" })
+                        @Html.ValidationMessageFor(model => model.Valor1)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(model => model.Valor2, new { @class = "form-control", @placeholder = "Valor 2" })
+                        @Html.ValidationMessageFor(model => model.Valor2)
+                    </div>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(model => model.Valor3, new { @class = "form-control", @placeholder = "Valor 3" })
+                        @Html.ValidationMessageFor(model => model.Valor3)
+                    </div>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(model => model.Valor4, new { @class = "form-control", @placeholder = "Valor 4" })
+                        @Html.ValidationMessageFor(model => model.Valor4)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <input type="submit" value="Guardar" class="btn btn-block btn-primary btnSubmit" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

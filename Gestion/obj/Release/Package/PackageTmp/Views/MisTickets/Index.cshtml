@@ -1,0 +1,26 @@
+﻿@model PagedList.IPagedList<Gestion.ViewModels.TicketsPrincipal>
+@using PagedList.Mvc; 
+
+@Html.Partial("_Header",Model)
+
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3 ">
+        <div class="well well-sm">
+            <form action="@Url.Action("Index")" method="get" class="searchIndex" data-gestion-ajax="true" data-gestion-target="#misTicketsList" >
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchName" name="searchName" placeholder="Buscar">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btnPrincipal" type="submit" name="search_button" id="search_button"><span class="glyphicon glyphicon-search"></span></button>
+                        @if (User.IsInRole("Cliente")) {
+                            <a href="MisTickets/Create" class="btn btn-primary" id="new_button" style="margin-left:8px">Nuevo Ticket</a>
+                        }
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_MisTickets",Model)
+
+

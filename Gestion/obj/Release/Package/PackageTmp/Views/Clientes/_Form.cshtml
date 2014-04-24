@@ -1,0 +1,79 @@
+﻿@model Gestion.Models.Cliente
+
+@{
+    var latlng = "";
+    if (Model != null)
+    {
+        latlng = "http://maps.google.com/maps?output=embed&q=" + Model.Latitud + "," + Model.Longitud;
+    }
+    
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Registro de Clientes</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row show-grid">
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(model => model.RazonSocial, new { @class = "form-control", @placeholder = "Razón Social", autofocus = "" })
+                        @Html.ValidationMessageFor(model => model.RazonSocial)
+                    </div>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(model => model.SitioWeb, new { @class = "form-control", @placeholder = "Sitio Web" })
+                        @Html.ValidationMessageFor(model => model.SitioWeb)
+                    </div>
+                    <div class="col-md-3">
+                        @Html.DropDownListFor(x => x.RevendedorID, new SelectList(ViewBag.Revendedores, "ID", "Nombre"), "Seleccione Revendedor", new { @class = "selectpicker" })
+                    </div>
+                </div>
+
+                <div class="row show-grid">
+                    <div class="col-md-4">
+                        @Html.DropDownListFor(x => x.LocalidadID, new SelectList(ViewBag.Localidades, "ID", "Descripcion"), new { @class = "selectpicker", data_validar_localidad = "true" })
+                        @Html.ValidationMessageFor(model => model.LocalidadID)
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" disabled="disabled" id="paisCliente" class="form-control" />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" disabled="disabled" id="provCliente" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(model => model.CuentaCorrienteID, new { @class = "form-control", @placeholder = "Cta. Corr. ID" })
+                        @Html.ValidationMessageFor(model => model.CuentaCorrienteID)
+                    </div>
+                </div>
+
+                <div class="row show-grid">
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(model => model.Calle, new { @class = "form-control", @placeholder = "Calle" })
+                        @Html.ValidationMessageFor(model => model.Calle)
+                    </div>
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(model => model.Altura, new { @class = "form-control", @placeholder = "Altura" })
+                        @Html.ValidationMessageFor(model => model.Altura)
+                    </div>
+                    <div class="col-md-1">
+                        @Html.TextBoxFor(model => model.Departamento, new { @class = "form-control", @placeholder = "Depto" })
+                        @Html.ValidationMessageFor(model => model.Departamento)
+                    </div>
+                    <div class="col-md-1">
+                        @Html.TextBoxFor(model => model.Piso, new { @class = "form-control", @placeholder = "Piso" })
+                        @Html.ValidationMessageFor(model => model.Piso)
+                    </div>
+                    <div class="col-md-2">
+                        @if ((Model != null))
+                        {
+                            if (Model.Latitud != null)
+                            {
+                            <a href="@latlng" class="btn btn-primary various fancybox.iframe" style="padding-right:18%"><span class="glyphicon glyphicon-globe iconRightMenu"></span>Ver Ubicación</a>
+                            }
+                        }
+                    </div>
+                    <div class="col-md-3">
+                        @Html.DropDownListFor(x => x.MedioDifusionID, new SelectList(ViewBag.MediosDifusion, "ID", "Descripcion"), new { @class = "selectpicker" })
+                        @Html.ValidationMessageFor(model => model.MedioDifusionID)
+                    </div>
+                </div>
