@@ -296,4 +296,8 @@ table > tbody > tr > td > a {
     margin-right:10px;
 }
 
+div.modalTickets > .modal-dialog {
+    width:100%;
+}
+
 /****************************/

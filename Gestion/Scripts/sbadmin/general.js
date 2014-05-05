@@ -48,22 +48,23 @@ $(function () {
 
         if ($evID == undefined) { //Creacion de consulta
 
-            $message = "<form id=\"formAddConsulta\" action=\"/MisTickets/CreateTicketEvento/" + $ticketID + "\" enctype=\"multipart/form-data\" method=\"post\"><textarea class='form-control' rows='4' name='descripcion' id='descripcion' placeholder='Ingrese su consulta...' autofocus='true' /><br/><input type=\"file\" id=\"image\" name=\"image\" accept=\"image/x-png, image/gif, image/jpeg\" /><input type=\"hidden\" id=\"tipoEvento\" name=\"tipoEvento\" value=\"1\" /></form>";
+            $message = "<form id=\"formAddConsulta\" action=\"/MisTickets/CreateTicketEvento/" + $ticketID + "\" enctype=\"multipart/form-data\" method=\"post\"><textarea class='form-control' rows='10' name='descripcion' id='descripcion' placeholder='Ingrese su consulta...' autofocus='true' /><br/><input type=\"file\" id=\"image\" name=\"image\" accept=\"image/x-png, image/gif, image/jpeg\" /><input type=\"hidden\" id=\"tipoEvento\" name=\"tipoEvento\" value=\"1\" /></form>";
             $title = "<span class='label label-primary'>Nueva consulta</span>";
         } else if ($dataResponse == 1) { //Creacion de respuesta
 
-            $message = "<form id=\"formAddRespuesta\" action=\"/MisTickets/CreateTicketEvento/" + $ticketID + "\" enctype=\"multipart/form-data\" method=\"post\"><textarea class='form-control' rows='4' name='descripcion' id='descripcion' placeholder='Ingrese la respuesta...' autofocus='true' /><br/><input type=\"file\" id=\"image\" name=\"image\" accept=\"image/x-png, image/gif, image/jpeg\" /><input type=\"hidden\" id=\"tipoEvento\" name=\"tipoEvento\" value=\"2\" /></form>";
+            $message = "<form id=\"formAddRespuesta\" action=\"/MisTickets/CreateTicketEvento/" + $ticketID + "\" enctype=\"multipart/form-data\" method=\"post\"><textarea class='form-control' rows='10' name='descripcion' id='descripcion' placeholder='Ingrese la respuesta...' autofocus='true' /><br/><input type=\"file\" id=\"image\" name=\"image\" accept=\"image/x-png, image/gif, image/jpeg\" /><input type=\"hidden\" id=\"tipoEvento\" name=\"tipoEvento\" value=\"2\" /></form>";
             $title = "<span class='label label-primary'>Respuesta de consulta</span>";
         } else { //Edición consulta/respuesta
 
             $description = $btn.closest('.alert').find('p').text();
-            $message = "<form id=\"formEditAll\" action=\"/MisTickets/EditTicketEvento/" + $evID + "\" enctype=\"multipart/form-data\" method=\"post\"><textarea class='form-control' rows='4' name='descripcion' id='descripcion' autofocus='true' >" + $description + "</textarea><br/><input type=\"file\" id=\"image\" name=\"image\" accept=\"image/x-png, image/gif, image/jpeg\" /></form>";
+            $message = "<form id=\"formEditAll\" action=\"/MisTickets/EditTicketEvento/" + $evID + "\" enctype=\"multipart/form-data\" method=\"post\"><textarea class='form-control' rows='10' name='descripcion' id='descripcion' autofocus='true' >" + $description + "</textarea><br/><input type=\"file\" id=\"image\" name=\"image\" accept=\"image/x-png, image/gif, image/jpeg\" /></form>";
             $title = "<span class='label label-primary'>Editar</span>";
 
         }
 
         bootbox.dialog({
             message: $message,
+            className: 'modalTickets',
             title: $title,
             buttons: {
                 danger: {

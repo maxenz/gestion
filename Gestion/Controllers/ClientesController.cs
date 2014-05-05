@@ -30,8 +30,8 @@ namespace Gestion.Controllers
                 {
                     ID = cliente.ID,
                     RazonSocial = cliente.RazonSocial,
-                    Email = getContactoPrincipal(cliente).Email,
-                    Telefono = getContactoPrincipal(cliente).Telefono,
+                    Email = (getContactoPrincipal(cliente).Email ?? "").ToString(),
+                    Telefono = (getContactoPrincipal(cliente).Telefono ?? "").ToString(),
                     Pais = cliente.Localidad.Provincia.Pais.Descripcion,
                     Provincia = cliente.Localidad.Provincia.Descripcion,
                     Localidad = cliente.Localidad.Descripcion,
@@ -45,10 +45,10 @@ namespace Gestion.Controllers
 
                 qClientes = qClientes
                             .Where(p => p.RazonSocial.ToUpper().Contains(searchName.ToUpper()) ||
-                                   p.Email.ToUpper().Contains(searchName.ToUpper()) ||
-                                   p.Pais.ToUpper().Contains(searchName.ToUpper()) ||
-                                   p.Provincia.ToUpper().Contains(searchName.ToUpper()) ||
-                                   p.Localidad.ToUpper().Contains(searchName.ToUpper())).ToList();
+                                p.Pais.ToUpper().Contains(searchName.ToUpper()) ||
+                                p.Email.ToString().ToUpper().Contains(searchName.ToUpper()) ||
+                                p.Provincia.ToUpper().Contains(searchName.ToUpper()) ||
+                                p.Localidad.ToUpper().Contains(searchName.ToUpper())).ToList();
             }
 
             qClientes = qClientes.OrderBy(p => p.RazonSocial).ToList();

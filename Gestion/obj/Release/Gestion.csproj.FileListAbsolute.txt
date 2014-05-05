@@ -99,3 +99,6 @@ C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gest
 C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gestion.Migrations.LogsRegistroSistema.resources
 C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gestion.Migrations.ChangeLogRegistroSistema.resources
 C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gestion.Migrations.DateChangedInLogRegistroSistema.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gestion.Migrations.AddPdfGestion.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gestion.Migrations.AddUserIDToTicketEvento.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gestion.Migrations.ChangeTicketEventoUser.resources

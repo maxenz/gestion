@@ -54,6 +54,7 @@ namespace Gestion.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.ClienteID = RouteData.Values["ClienteID"];
             ViewBag.Estados = db.Estados.ToList();
             return View();
         }
@@ -62,18 +63,36 @@ namespace Gestion.Controllers
         // POST: /ClientesGestiones/Create
 
         [HttpPost]
-        public ActionResult Create(ClientesGestion clientesgestion)
+        public ActionResult Create(ClientesGestion clientesgestion, HttpPostedFileBase pdfDoc)
         {
             if (clientesgestion.FechaRecontacto < DateTime.Now)
             {
-                clientesgestion.FechaRecontacto = new DateTime(1900,1,1);
+                clientesgestion.FechaRecontacto = new DateTime(1900, 1, 1);
             }
 
+            if (ModelState.IsValid)
+            {
+                if (pdfDoc != null)
+                {
+                    clientesgestion.PdfGestion = new byte[pdfDoc.ContentLength];
+                    pdfDoc.InputStream.Read(clientesgestion.PdfGestion, 0, pdfDoc.ContentLength);
+                }
                 db.ClientesGestiones.Add(clientesgestion);
                 db.SaveChanges();
+
                 return RedirectToAction("Edit", "Clientes", new { id = clientesgestion.ClienteID });
+            }
+
+            return RedirectToAction("Create");
 
         }
+
+        public FileResult PDFDisplay(int id)
+        {
+            byte[] fileData = db.ClientesGestiones.Find(id).PdfGestion;
+
+            return File(fileData, "application/pdf");
+        } 
 
         //
         // GET: /ClientesGestiones/Edit/5
@@ -94,17 +113,31 @@ namespace Gestion.Controllers
         // POST: /ClientesGestiones/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(ClientesGestion clientesgestion)
+        public ActionResult Edit(ClientesGestion clientesgestion, HttpPostedFileBase pdfDoc)
         {
-            if (clientesgestion.FechaRecontacto < DateTime.Now)
-            {
-                clientesgestion.FechaRecontacto = new DateTime(1900, 1, 1);
-            }
 
+            if (ModelState.IsValid)
+            {
+                if (clientesgestion.FechaRecontacto < DateTime.Now)
+                {
+                    clientesgestion.FechaRecontacto = new DateTime(1900, 1, 1);
+                }
+
+                if (pdfDoc != null)
+                {
+                    clientesgestion.PdfGestion = new byte[pdfDoc.ContentLength];
+                    pdfDoc.InputStream.Read(clientesgestion.PdfGestion, 0, pdfDoc.ContentLength);
+                }
+                
                 db.Entry(clientesgestion).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Edit", "Clientes", new { id = clientesgestion.ClienteID });
 
+                return RedirectToAction("Edit", "Clientes", new { id = clientesgestion.ClienteID });
+            }
+
+            ViewBag.Estados = db.Estados.ToList();
+
+            return View(clientesgestion);
         }
 
         //
@@ -126,12 +159,12 @@ namespace Gestion.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            
+
             ClientesGestion clientesgestion = db.ClientesGestiones.Find(id);
             var cliente_id = clientesgestion.ClienteID;
             db.ClientesGestiones.Remove(clientesgestion);
             db.SaveChanges();
-            return RedirectToAction("Index", routeValues: new { ClienteID = cliente_id  });
+            return RedirectToAction("Index", routeValues: new { ClienteID = cliente_id });
         }
 
         protected override void Dispose(bool disposing)

@@ -65,13 +65,19 @@ namespace Gestion.Controllers
                     estado = ticket.TicketEstado.Descripcion;
                 }
 
+                Cliente cli = db.ClientesUsuarios
+                                .Where(x => x.UsuarioID == ticket.UsuarioID)
+                                .Select(x => x.Cliente).FirstOrDefault();
+                                
                 qTickets.Add(new TicketsPrincipal
                 {
                     ID = ticket.ID,
                     FechaHora = ticket.FechaCreacion,
                     Asunto = ticket.Asunto,
                     Estado = estado,
-                    Usuario = ticket.Usuario.UserName
+                    Usuario = ticket.Usuario.UserName,
+                    Cliente = cli.RazonSocial,
+                    ClienteID = cli.ID
                 });
             }
 
@@ -83,7 +89,7 @@ namespace Gestion.Controllers
                                     .ToList();
             }
 
-            qTickets = qTickets.OrderBy(p => p.Estado).ToList();
+            qTickets = qTickets.OrderBy(p => p.Estado).ThenByDescending(p => p.FechaHora).ToList();
 
             if (Request.IsAjaxRequest())
             {
@@ -122,6 +128,7 @@ namespace Gestion.Controllers
             tkEvento.Descripcion = descripcion;
             tkEvento.FechaCreacion = DateTime.Now;
             tkEvento.TicketID = ID;
+            tkEvento.UserID = GetCurrentUserID();
             tkEvento.TicketTipoEventoID = tipoEvento;
 
             setImageTicketEvento(tkEvento, image);
@@ -222,6 +229,7 @@ namespace Gestion.Controllers
             TicketEvento tkEvento = db.TicketEventos.Find(ID);
             setImageTicketEvento(tkEvento, image);
             tkEvento.Descripcion = descripcion;
+            tkEvento.UserID = GetCurrentUserID();
             tkEvento.FechaCreacion = DateTime.Now;
             db.Entry(tkEvento).State = EntityState.Modified;
             db.SaveChanges();

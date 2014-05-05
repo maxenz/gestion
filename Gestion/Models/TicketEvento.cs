@@ -32,6 +32,9 @@ namespace Gestion.Models
         [ForeignKey("Ticket")]
         public int TicketID { get; set; }
 
+        [ForeignKey("UserProfile")]
+        public int UserID { get; set; }
+
         public byte[] ImageData { get; set; }
 
         [HiddenInput(DisplayValue = false)]
@@ -39,6 +42,7 @@ namespace Gestion.Models
 
         public virtual TicketTipoEvento TicketTipoEvento { get; set; }
         public virtual Ticket Ticket { get; set; }
+        public virtual UserProfile UserProfile { get; set; }
 
     }
 }

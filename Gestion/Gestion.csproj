@@ -348,6 +348,18 @@
     <Compile Include="Migrations\201404241357158_DateChangedInLogRegistroSistema.Designer.cs">
       <DependentUpon>201404241357158_DateChangedInLogRegistroSistema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404301827362_AddPdfGestion.cs" />
+    <Compile Include="Migrations\201404301827362_AddPdfGestion.Designer.cs">
+      <DependentUpon>201404301827362_AddPdfGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405051816572_AddUserIDToTicketEvento.cs" />
+    <Compile Include="Migrations\201405051816572_AddUserIDToTicketEvento.Designer.cs">
+      <DependentUpon>201405051816572_AddUserIDToTicketEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405051829181_ChangeTicketEventoUser.cs" />
+    <Compile Include="Migrations\201405051829181_ChangeTicketEventoUser.Designer.cs">
+      <DependentUpon>201405051829181_ChangeTicketEventoUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -936,6 +948,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404241357158_DateChangedInLogRegistroSistema.resx">
       <DependentUpon>201404241357158_DateChangedInLogRegistroSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404301827362_AddPdfGestion.resx">
+      <DependentUpon>201404301827362_AddPdfGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405051816572_AddUserIDToTicketEvento.resx">
+      <DependentUpon>201405051816572_AddUserIDToTicketEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405051829181_ChangeTicketEventoUser.resx">
+      <DependentUpon>201405051829181_ChangeTicketEventoUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

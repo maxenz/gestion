@@ -19,14 +19,17 @@
                                         <th class="col-lg-3 centrado">
                                             @Html.DisplayNameFor(model => model.First().Estado.Descripcion)
                                         </th>
-                                        <th class="col-lg-3 centrado">
+                                        <th class="col-lg-2 centrado">
                                             @Html.DisplayNameFor(model => model.First().Observaciones)
                                         </th>
                                         <th class="col-lg-2 centrado">
                                             @Html.DisplayNameFor(model => model.First().FechaRecontacto)
                                         </th>
+
+                                        <th class="col-lg-1 centrado">PDF</th>
                                         <th class="col-lg-1 centrado"></th>
                                         <th class="col-lg-1 centrado"></th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -39,11 +42,17 @@
                                             <td class="col-lg-3 centrado">
                                                 @Html.DisplayFor(modelItem => item.Estado.Descripcion)
                                             </td>
-                                            <td class="col-lg-3 centrado">
+                                            <td class="col-lg-2 centrado">
                                                 @Html.DisplayFor(modelItem => item.Observaciones)
                                             </td>
                                             <td class="col-lg-2 centrado">
                                                 @Html.DisplayFor(modelItem => item.FechaRecontacto)
+                                            </td>
+                                            <td class="col-lg-1 centrado">
+                                                @if (item.PdfGestion != null)
+                                                {
+                                                    <a href="@item.ClienteID/ClientesGestiones/PDFDisplay/@item.ID" target="_blank" ><span class="glyphicon glyphicon-list-alt azulOscuro"></span></a>
+                                                }
                                             </td>
                                             <td class="col-lg-1 centrado">
                                                 <a href="@item.ClienteID/ClientesGestiones/Edit/@item.ID"><span class="glyphicon glyphicon-edit azulOscuro"></span></a>
@@ -51,10 +60,10 @@
                                             <td class="col-lg-1 centrado">
                                                 <a href="@item.ClienteID/ClientesGestiones/Delete/@item.ID" class="delete" data-gestion-target="#clientesGestionesList"><span class="glyphicon glyphicon-remove-circle rojo"></span></a>
                                             </td>
+
                                         </tr>
                                     }
                                 </tbody>
-
                             </table>
 
                             <div class="row">

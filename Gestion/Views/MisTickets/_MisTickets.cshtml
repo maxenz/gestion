@@ -14,11 +14,14 @@
                             <table class="table table-hover table-striped table-bordered tableIndex">
                                 <thead>
                                     <tr>
-                                        <th class="col-lg-4 centrado">
+                                        <th class="col-lg-3 centrado">
                                             @Html.DisplayNameFor(model => model.First().FechaHora)
                                         </th>
                                         <th class="col-lg-2 centrado">
                                             @Html.DisplayNameFor(model => model.First().Usuario)
+                                        </th>
+                                        <th class="col-lg-2 centrado">
+                                            @Html.DisplayNameFor(model => model.First().Cliente)
                                         </th>
                                         <th class="col-lg-2 centrado">
                                             @Html.DisplayNameFor(model => model.First().Asunto)
@@ -27,18 +30,21 @@
                                             @Html.DisplayNameFor(model => model.First().Estado)
                                         </th>
 
-                                        <th class="col-lg-2 centrado"></th>
+                                        <th class="col-lg-1 centrado"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td class="col-lg-4 centrado">
+                                            <td class="col-lg-3 centrado">
                                                 @Html.DisplayFor(modelItem => item.FechaHora)
                                             </td>
                                             <td class="col-lg-2 centrado">
                                                 @Html.DisplayFor(modelItem => item.Usuario)
+                                            </td>
+                                            <td class="col-lg-2 centrado">
+                                                @Html.ActionLink(item.Cliente, "Edit", "Clientes", new { id = item.ClienteID }, null)
                                             </td>
                                             <td class="col-lg-2 centrado">
                                                 @Html.DisplayFor(modelItem => item.Asunto)
@@ -62,7 +68,7 @@
                                                 </td>
                                             }
 
-                                            <td class="col-lg-2 centrado">
+                                            <td class="col-lg-1 centrado">
                                                 <a href="MisTickets/Edit/@item.ID"><span class="glyphicon glyphicon-edit azulOscuro"></span></a>
                                             </td>
                                         </tr>

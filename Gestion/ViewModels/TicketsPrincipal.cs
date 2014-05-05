@@ -15,6 +15,8 @@ namespace Gestion.ViewModels
         public String Estado { get; set; }
         public int ID { get; set; }
         public String Usuario { get; set; }
+        public String Cliente { get; set; }
+        public int ClienteID { get; set; }
        
     }
 }

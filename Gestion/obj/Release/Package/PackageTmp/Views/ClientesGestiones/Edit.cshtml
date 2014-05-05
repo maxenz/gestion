@@ -2,7 +2,9 @@
 
 @Html.Partial("_Header",Model)
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm("Edit","ClientesGestiones",new { ClienteID = ViewBag.ClienteID},
+    FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 

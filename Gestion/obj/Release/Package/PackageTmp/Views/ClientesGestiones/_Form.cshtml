@@ -12,13 +12,16 @@
                         @Html.DropDownListFor(model => model.EstadoID, new SelectList(ViewBag.Estados, "ID", "Descripcion"), new { @class = " selectpicker" })
                         @Html.ValidationMessageFor(model => model.EstadoID)
                     </div>
-                    <div class="col-lg-4">
-                        @Html.TextBoxFor(model => model.Fecha, "{0:dd/MM/yyyy}" , new { @class = "form-control datepicker", @placeholder = "Fecha" })
+                    <div class="col-lg-2">
+                        @Html.TextBoxFor(model => model.Fecha, "{0:dd/MM/yyyy}", new { @class = "form-control datepicker", @placeholder = "Fecha" })
                         @Html.ValidationMessageFor(model => model.Fecha)
                     </div>
-                    <div class="col-lg-4">
-                        @Html.TextBoxFor(model => model.FechaRecontacto, "{0:dd/MM/yyyy}" , new { @class = "form-control datepicker", @placeholder = "Fecha Recontacto" })
+                    <div class="col-lg-2">
+                        @Html.TextBoxFor(model => model.FechaRecontacto, "{0:dd/MM/yyyy}", new { @class = "form-control datepicker", @placeholder = "Fecha Recontacto" })
                         @Html.ValidationMessageFor(model => model.FechaRecontacto)
+                    </div>
+                    <div class="col-lg-4">
+                       <input type="file" name="pdfDoc"  accept="application/pdf" />
                     </div>
                 </div>
                 <div class="row">
