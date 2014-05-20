@@ -11,6 +11,7 @@ using System.Web.Mvc;
 namespace Gestion.Controllers
 {
     [Authorize(Roles = "Administrador")]
+
     public class MapaController : Controller
     {
         private GestionDb db = new GestionDb();
@@ -36,6 +37,7 @@ namespace Gestion.Controllers
             return db.Clientes.AsExpandable().Where(predicate);
         }
 
+        [AllowAnonymous]
         public string GetPositionsOfClients(int[] vData)
         {
 
