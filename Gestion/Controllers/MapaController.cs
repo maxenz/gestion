@@ -24,7 +24,7 @@ namespace Gestion.Controllers
             return View();
         }
 
-        private IQueryable<Cliente> SearchClients(params int[] vMediosDifusion )
+        private IQueryable<Cliente> SearchClients(params int[] vMediosDifusion)
         {
 
             var predicate = PredicateBuilder.False<Cliente>();
@@ -80,7 +80,8 @@ namespace Gestion.Controllers
                         Telefono = getTelefono(cli),
                         SitioWeb = cli.SitioWeb,
                         EstadoCliente = getEstadoCliente(cli),
-                        MedioDifusionID = cli.MedioDifusionID                        
+                        MedioDifusionID = cli.MedioDifusionID,
+                        VersionShaman = getVersionShaman(cli)
                     });
                 }
 
@@ -90,9 +91,29 @@ namespace Gestion.Controllers
             }
             else
             {
-                return  JsonConvert.SerializeObject(null);
+                return JsonConvert.SerializeObject(null);
             }
-           
+
+
+        }
+
+        private string getVersionShaman(Cliente cli)
+        {
+            string producto = "";
+            if (getEstadoCliente(cli) == 2)
+            {
+                var prods = cli.ClientesLicencias.FirstOrDefault().Licencia.Productos;
+                try
+                {
+                    producto = prods.Where(x => (x.Numero == 1 || x.Numero == 500)).FirstOrDefault().Descripcion;
+                }
+                catch
+                {
+                    producto = "";
+                }
+            }
+            
+            return producto;
 
         }
 

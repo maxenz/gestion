@@ -21,6 +21,7 @@ namespace Gestion.ViewModels
         public String SitioWeb { get; set; }
         public int EstadoCliente { get; set; }
         public int? MedioDifusionID { get; set; }
+        public String VersionShaman { get; set; }
 
     }
 }
