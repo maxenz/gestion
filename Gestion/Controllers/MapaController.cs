@@ -159,7 +159,7 @@ namespace Gestion.Controllers
         {
 
             string telefono = cli.ClientesContactos
-                                                    .Where(x => x.flgPrincipal == 1)
+                                                    //.Where(x => x.flgPrincipal == 1)
                                                     .Where(x => x.esInstitucional == true)
                                                     .Select(x => x.Telefono).FirstOrDefault();
             if (telefono != null)
