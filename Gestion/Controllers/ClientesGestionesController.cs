@@ -65,12 +65,13 @@ namespace Gestion.Controllers
         [HttpPost]
         public ActionResult Create(ClientesGestion clientesgestion, HttpPostedFileBase pdfDoc)
         {
+
             if (clientesgestion.FechaRecontacto < DateTime.Now)
             {
                 clientesgestion.FechaRecontacto = new DateTime(1900, 1, 1);
             }
 
-            if (ModelState.IsValid)
+            if ((clientesgestion.Fecha != new DateTime(1,1,1)) && (clientesgestion.Observaciones != "") )
             {
                 if (pdfDoc != null)
                 {
@@ -80,9 +81,11 @@ namespace Gestion.Controllers
                 db.ClientesGestiones.Add(clientesgestion);
                 db.SaveChanges();
 
+
                 return RedirectToAction("Edit", "Clientes", new { id = clientesgestion.ClienteID });
             }
 
+            ViewBag.ClienteID = clientesgestion.ClienteID;
             return RedirectToAction("Create");
 
         }
@@ -92,7 +95,7 @@ namespace Gestion.Controllers
             byte[] fileData = db.ClientesGestiones.Find(id).PdfGestion;
 
             return File(fileData, "application/pdf");
-        } 
+        }
 
         //
         // GET: /ClientesGestiones/Edit/5
@@ -128,7 +131,7 @@ namespace Gestion.Controllers
                     clientesgestion.PdfGestion = new byte[pdfDoc.ContentLength];
                     pdfDoc.InputStream.Read(clientesgestion.PdfGestion, 0, pdfDoc.ContentLength);
                 }
-                
+
                 db.Entry(clientesgestion).State = EntityState.Modified;
                 db.SaveChanges();
 

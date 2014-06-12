@@ -38,10 +38,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/21/2014 15:25:37</publishTime>
     </File>
     <File Include="bin/Gestion.dll">
-      <publishTime>05/12/2014 17:18:13</publishTime>
+      <publishTime>06/11/2014 12:00:43</publishTime>
     </File>
     <File Include="bin/Gestion.XmlSerializers.dll">
-      <publishTime>05/12/2014 17:18:13</publishTime>
+      <publishTime>06/11/2014 12:00:44</publishTime>
     </File>
     <File Include="bin/LinqKit.dll">
       <publishTime>04/21/2014 15:25:40</publishTime>
@@ -1175,7 +1175,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/18/2013 15:49:20</publishTime>
     </File>
     <File Include="Views/ClientesGestiones/Create.cshtml">
-      <publishTime>05/05/2014 11:55:29</publishTime>
+      <publishTime>06/11/2014 11:42:36</publishTime>
     </File>
     <File Include="Views/ClientesGestiones/Edit.cshtml">
       <publishTime>04/30/2014 16:49:30</publishTime>
@@ -1610,7 +1610,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/21/2014 12:57:01</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/12/2014 17:18:14</publishTime>
+      <publishTime>06/11/2014 12:00:48</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -102,3 +102,4 @@ C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\bin\DotNetOpenAu
 C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gestion.dll
 C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gestion.pdb
 C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gestion.XmlSerializers.dll
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Release\Gestion.csprojResolveAssemblyReference.cache

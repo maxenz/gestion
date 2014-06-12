@@ -2,14 +2,11 @@
 
 @Html.Partial("_Header",Model)
 
-@using (Html.BeginForm("Create","ClientesGestiones",new { ClienteID = ViewBag.ClienteID},
-    FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-    
+<form action="/Clientes/Edit/22/ClientesGestiones/Create" enctype="multipart/form-data" method="post">
+
     @Html.Partial("_Form",Model)
-}
+
+</form>
 
 @*@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
