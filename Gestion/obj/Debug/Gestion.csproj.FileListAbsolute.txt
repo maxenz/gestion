@@ -157,6 +157,7 @@ C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestio
 C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.AddPdfGestion.resources
 C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.AddUserIDToTicketEvento.resources
 C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.Migrations.ChangeTicketEventoUser.resources
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.csprojResolveAssemblyReference.cache
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\bin\Gestion.dll.config
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\bin\Gestion.dll
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\bin\Gestion.pdb
@@ -226,7 +227,6 @@ C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\bin\DotNetOpenAuth.OAuth.Consume
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\bin\DotNetOpenAuth.OAuth.xml
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\bin\DotNetOpenAuth.OpenId.xml
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.csprojResolveAssemblyReference.cache
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.Migrations.AddFechaRecontacto.resources
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.Migrations.AddComisionRevendedores.resources
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.Migrations.AddRevendedorID.resources
@@ -261,4 +261,3 @@ C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.Migrations.Cha
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.csproj.GenerateResource.Cache
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.dll
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.pdb
-C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.csprojResolveAssemblyReference.cache

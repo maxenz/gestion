@@ -142,7 +142,7 @@ namespace Gestion.Controllers
         private string getEmail(Cliente cli)
         {
             string email = cli.ClientesContactos
-                                   .Where(x => x.flgPrincipal == 1)
+                                   //.Where(x => x.flgPrincipal == 1)
                                    .Where(x => x.esInstitucional == true)
                                    .Select(x => x.Email).FirstOrDefault();
             if (email != null)
