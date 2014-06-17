@@ -261,3 +261,4 @@ C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.Migrations.Cha
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.csproj.GenerateResource.Cache
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.dll
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.pdb
+C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.csprojResolveAssemblyReference.cache

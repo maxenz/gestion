@@ -90,6 +90,12 @@ namespace Gestion.Controllers
             string dbUser = cliLic.CnnUser;
             string dbPass = cliLic.CnnPassword;
 
+            ViewBag.dbConexion = dbConexion;
+            ViewBag.dbName = dbName;
+            ViewBag.dbUser = dbUser;
+            ViewBag.dbPass = dbPass;
+            ViewBag.Cliente = cliLic.Cliente.RazonSocial;
+
             string connectionString = null;
             SqlConnection cnn;
             SqlCommand sqlCmd;
@@ -103,7 +109,8 @@ namespace Gestion.Controllers
                 SqlDataReader sqlReader = sqlCmd.ExecuteReader();
                 while (sqlReader.Read())
                 {
-                   ViewBag.ShamanExpressUser = sqlReader.GetValue(0); 
+                   ViewBag.ShamanExpressUser = sqlReader.GetValue(0);
+
                 }
                 sqlReader.Close();
                 sqlCmd.Dispose();
