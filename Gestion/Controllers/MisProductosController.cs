@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using Gestion.Models;
 using PagedList;
+using System.Data.SqlClient;
 
 namespace Gestion.Controllers
 {
@@ -46,7 +47,12 @@ namespace Gestion.Controllers
                 var userName = User.Identity.Name;
                 var userID = db.UserProfiles.Where(x => x.UserName == userName).FirstOrDefault().UserId;
 
-                Cliente cliente = db.ClientesUsuarios.Where(x => x.UsuarioID == userID).FirstOrDefault().Cliente;
+                ClientesUsuario cliUsr = db.ClientesUsuarios.Where(x => x.UsuarioID == userID).FirstOrDefault();
+
+                getUserForShamanWeb(1, cliUsr);
+
+                Cliente cliente = cliUsr.Cliente;
+
                 if (setProductos(cliente))
                 {
                     return View("Index");
@@ -56,6 +62,59 @@ namespace Gestion.Controllers
                     return View("_NoProductos");
                 }
             }
+
+        }
+
+        private void getUserForShamanWeb(int typeShaman, ClientesUsuario cliUsr)
+        {
+            int shmID;
+            if (typeShaman == 1)
+            {
+                shmID = Convert.ToInt32(cliUsr.ShamanExpressID);
+            }
+            else
+            {
+                shmID = Convert.ToInt32(cliUsr.ShamanFullID);
+            }
+
+            if (shmID == 0)
+            {
+                ViewBag.ShamanExpressUser = "";
+                return;
+            }
+
+
+            ClientesLicencia cliLic = cliUsr.Cliente.ClientesLicencias.FirstOrDefault();
+            string dbConexion = cliLic.ConexionServidor;
+            string dbName = cliLic.CnnCatalog;
+            string dbUser = cliLic.CnnUser;
+            string dbPass = cliLic.CnnPassword;
+
+            string connectionString = null;
+            SqlConnection cnn;
+            SqlCommand sqlCmd;
+            connectionString = "Data Source=" + dbConexion + ";Initial Catalog=" + dbName + ";User ID=" + dbUser + ";Password=" + dbPass + ";";
+            cnn = new SqlConnection(connectionString);
+            string sql = "SELECT Identificacion FROM Usuarios WHERE ID = " + shmID;
+            try
+            {
+                cnn.Open();
+                sqlCmd = new SqlCommand(sql, cnn);
+                SqlDataReader sqlReader = sqlCmd.ExecuteReader();
+                while (sqlReader.Read())
+                {
+                   ViewBag.ShamanExpressUser = sqlReader.GetValue(0); 
+                }
+                sqlReader.Close();
+                sqlCmd.Dispose();
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+
 
         }
 
