@@ -261,3 +261,4 @@ C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.csproj.Generat
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.dll
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.pdb
 C:\Users\Maxo\Desktop\Proyectos\gestion\Gestion\obj\Debug\Gestion.csprojResolveAssemblyReference.cache
+C:\Users\soporte\Desktop\Proyectos .NET\Gestion\Gestion\Gestion\obj\Debug\Gestion.csprojResolveAssemblyReference.cache

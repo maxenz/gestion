@@ -174,6 +174,9 @@ namespace Gestion.Controllers
             }
             else
             {
+                ticket.TicketEstadoID = 2;
+                db.Entry(ticket).State = EntityState.Modified;
+                db.SaveChanges();
                 doEmailAdministrator(tkEvento);
 
             }
