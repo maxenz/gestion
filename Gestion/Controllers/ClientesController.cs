@@ -289,19 +289,20 @@ namespace Gestion.Controllers
         // POST: /Clientes/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Cliente cliente)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Cliente cli)
         {
             if (ModelState.IsValid)
             {
-                cliente = validarGeoreferenciacion(cliente);
-                db.Entry(cliente).State = EntityState.Modified;
+                cli = validarGeoreferenciacion(cli);
+                db.Entry(cli).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             getLocalidades();
             getRevendedores();
             getMediosDifusion();
-            return View(cliente);
+            return View(cli);
         }
 
         //
