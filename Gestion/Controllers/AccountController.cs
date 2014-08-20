@@ -194,7 +194,8 @@ namespace Gestion.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View("Login", "_LayoutLogin");
+            //return View("Login", "_LayoutLogin");
+            return View("Login", "_TemplateGestion_Login");
         }
 
         //

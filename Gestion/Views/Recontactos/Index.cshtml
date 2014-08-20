@@ -1,9 +1,9 @@
 ﻿@model PagedList.IPagedList<Gestion.ViewModels.Recontacto>
 @using PagedList.Mvc;
 
-@Html.Partial("_Header", Model)
+@*@Html.Partial("_Header", Model)*@
 
-<div class="row">
+@*<div class="row">
     <div class="col-lg-12">
         <div class="well well-sm">
             <form action="@Url.Action("Index")" method="get" class="searchIndex" data-gestion-ajax="true" data-gestion-target="#recontactoList" >
@@ -34,6 +34,6 @@
             </form>
         </div>
     </div>
-</div>
+</div>*@
 
 @Html.Partial("_Recontactos",Model)

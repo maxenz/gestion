@@ -1,12 +1,10 @@
 ﻿@model Gestion.Models.LoginModel
 
 @{
-    ViewBag.Title = "Shaman Gestión";
+    ViewBag.Title = "Logueo de Usuarios";
 }
 
-
-
-<section id="loginForm">
+@*<section id="loginForm">
     @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
     {
         @Html.AntiForgeryToken()
@@ -45,7 +43,59 @@
 
     }
 
-</section>
+</section>*@
+
+
+
+<div class="account-container">
+
+    <div class="content clearfix">
+
+        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+        {
+            @Html.AntiForgeryToken()
+            if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count() > 0)
+            { 
+            <div class="row">
+                <div class="span4 offset4">
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert">×</a>
+                        @Html.ValidationSummary(true)
+                    </div>
+                </div>
+            </div>
+            }
+		
+            <h1>@ViewBag.Title</h1>		
+			
+            <div class="login-fields">
+
+                <p>Por favor ingrese sus datos</p>
+
+                <div class="field">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "login username-field", autofocus = "", placeholder = "Usuario" })
+                </div>
+                <!-- /field -->
+
+                <div class="field">
+                    @Html.PasswordFor(m => m.Password, new { @class = "login password-field", placeholder = "Contraseña" })
+                </div>
+                <!-- /password -->
+
+            </div> <!-- /login-fields -->
+			
+            <div class="login-actions">
+                <a href="#" id="forgotPassword">Resetear Password</a>
+                <button class="button btn btn-success btn-large btn-actions">Ingresar</button>
+            </div> <!-- .actions -->
+        }
+
+    </div>
+    <!-- /content -->
+
+</div>
+<!-- /account-container -->
+
 
 
 
