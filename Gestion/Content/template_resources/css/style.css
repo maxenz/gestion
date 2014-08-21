@@ -1284,3 +1284,7 @@ color: #333;
   background-color:#00ba8b !important;
 }
 
+#logoutForm {
+    margin-bottom:0;
+}
+

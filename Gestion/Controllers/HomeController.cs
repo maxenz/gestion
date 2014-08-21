@@ -33,18 +33,6 @@ namespace Gestion.Controllers
             }
             return View();
         }
-        [Authorize]
-        public ActionResult About()
-        {
 
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-
-            return View();
-        }
     }
 }

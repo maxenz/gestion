@@ -242,7 +242,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HtmlHelpers\FormatZeroPrice.cs" />
+    <Compile Include="HtmlHelpers\HtmlHelpers.cs" />
     <Compile Include="Migrations\201312231502206_AddFechaRecontacto.cs" />
     <Compile Include="Migrations\201312231502206_AddFechaRecontacto.Designer.cs">
       <DependentUpon>201312231502206_AddFechaRecontacto.cs</DependentUpon>
@@ -711,8 +711,8 @@
     <Content Include="Scripts\template_scripts\js\guidely\guidely.css" />
     <Content Include="Scripts\template_scripts\js\guidely\guidely.min.js" />
     <Content Include="Scripts\template_scripts\js\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\template_scripts\js\jquery.blockUI.js" />
     <Content Include="Scripts\template_scripts\js\login.js" />
-    <Content Include="Scripts\template_scripts\js\signin.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -852,7 +852,6 @@
     <Content Include="Views\Revendedores\_Form.cshtml" />
     <Content Include="Views\Revendedores\_Header.cshtml" />
     <Content Include="Views\Recontactos\Index.cshtml" />
-    <Content Include="Views\Recontactos\_Header.cshtml" />
     <Content Include="Views\Recontactos\_Recontactos.cshtml" />
     <Content Include="Views\Shared\_NotificacionRecontacto.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />

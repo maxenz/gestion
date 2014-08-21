@@ -7,14 +7,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <link href="/Content/template_resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/Content/template_resources/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
-        rel="stylesheet">
-    <link href="/Content/template_resources/css/font-awesome.css" rel="stylesheet">
-    <link href="/Content/template_resources/css/style.css" rel="stylesheet">
-    <link href="/Content/template_resources/css/pages/signin.css" rel="stylesheet">
+          rel="stylesheet">
+    @Styles.Render("~/bundles/gestion_css")
+    @Styles.Render("~/bundles/signin_css")
 </head>
 
 <body>
@@ -31,14 +27,16 @@
                     <span class="icon-bar"></span>
                 </a>
 
-                <a class="brand" href="index.html">Shaman Gesti&oacute;n				
+                <a class="brand" href="index.html">
+                    Shaman Gesti&oacute;n
                 </a>
 
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
 
                         <li class="">
-                            <a href="signup.html" class="">No ten&eacute;s una cuenta?
+                            <a href="signup.html" class="">
+                                No ten&eacute;s una cuenta?
                             </a>
 
                         </li>
@@ -63,15 +61,11 @@
 
     </div>
     <!-- /navbar -->
-
     @RenderBody()
 
-    <script src="/Scripts/template_scripts/js/jquery-1.7.2.min.js"></script>
-    <script src="/Scripts/template_scripts/js/excanvas.min.js"></script>
-    <script src="/Scripts/template_scripts/js/bootstrap.js"></script>
-    <script src="/Scripts/template_scripts/js/base.js"></script>
-    <script src="/Scripts/template_scripts/js/signin.js"></script>
-    @Scripts.Render("~/bundles/gestion_js")
+
+    @Scripts.Render("~/bundles/libraries_js")
+    @Scripts.Render("~/bundles/login_js")
     @RenderSection("scripts", required: false)
 
 </body>

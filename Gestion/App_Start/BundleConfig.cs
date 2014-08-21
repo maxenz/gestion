@@ -23,13 +23,38 @@ namespace Gestion
                   "~/Scripts/sbadmin/general.js"
              ));
 
-            bundles.Add(new ScriptBundle("~/bundles/gestion_js").Include(
-                    "~/Scripts/sbadmin/bootbox.min.js",
-                    "~/Scripts/sbadmin/bootstrap-datepicker.js",
-                    "~/Scripts/sbadmin/bootstrap-select.min.js",
-                    "~/Scripts/template_scripts/js/login.js"
-                ));
+            bundles.Add(new ScriptBundle("~/bundles/libraries_js").Include(
+                "~/Scripts/template_scripts/js/jquery-1.7.2.min.js",
+                "~/Scripts/template_scripts/js/excanvas.min.js",
+                "~/Scripts/template_scripts/js/bootstrap.js",
+                "~/Scripts/sbadmin/bootbox.min.js",
+                "~/Scripts/sbadmin/bootstrap-datepicker.js",
+                "~/Scripts/sbadmin/bootstrap-select.min.js",
+                "~/Scripts/template_scripts/js/base.js",
+                "~/Scripts/template_scripts/js/jquery.blockUI.js"
+            ));
 
+            bundles.Add(new ScriptBundle("~/bundles/login_js").Include(
+                    "~/Scripts/template_scripts/js/login.js"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/general_js").Include(
+                    "~/Scripts/template_scripts/js/general.js"
+            ));
+
+            bundles.Add(new StyleBundle("~/bundles/gestion_css").Include(
+                    "~/Content/template_resources/css/bootstrap.min.css",
+                    "~/Content/template_resources/css/bootstrap-responsive.min.css",
+                    "~/Content/template_resources/css/font-awesome.css",
+                    "~/Content/template_resources/css/style.css",
+                    "~/Content/sbadmin/datepicker.css",
+                    "~/Content/template_resources/css/bootstrap.min.css"            
+            ));
+
+            bundles.Add(new StyleBundle("~/bundles/signin_css").Include(
+                    "~/Content/template_resources/css/pages/signin.css"   
+            ));
+                             
             bundles.Add(new StyleBundle("~/bundles/AdminCss").Include(
                    "~/Content/sbadmin/bootstrap.css",
                    "~/Content/font-awesome/css/font-awesome.css",

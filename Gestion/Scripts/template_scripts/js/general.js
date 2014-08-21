@@ -4,14 +4,14 @@ $(function () {
     //en la tabla ClientesGestiones, corto el texto si es mayor a 20 caracteres
     function setFormatTables() {
 
-        $("#tbGestion > tbody > tr > td").each(function () {
+        $("table > tbody > tr > td").each(function () {
 
             var str = $(this).html().trim();
 
-            if (str.length > 15) {
+            if (str.length > 70) {
 
                 if (str.indexOf("a href") == -1) {
-                    var subStr = str.substring(0, 20);
+                    var subStr = str.substring(0, 70);
                     $(this).html(subStr + "...");
                 }
             }
@@ -286,10 +286,14 @@ $(function () {
             data: $form.serialize()
         };
 
+        blockInterface();
+
         $.ajax(options).done(function (data) {
             var $target = $($form.attr("data-gestion-target"));
             var $newHtml = $(data);
             $target.replaceWith($newHtml);
+            setFormatTables();
+            $.unblockUI();
 
         });
 
@@ -304,9 +308,13 @@ $(function () {
             type: "get"
         };
 
+        blockInterface();
+
         $.ajax(options).done(function (data) {
             var target = $a.parents("div.pagedList").attr("data-gestion-target");
             $(target).replaceWith(data);
+            setFormatTables();
+            $.unblockUI();
         });
 
         return false;
@@ -361,6 +369,23 @@ $(function () {
 
     }
 
+    function blockInterface() {
+
+        $.blockUI({
+            css: {
+                border: 'none',
+                padding: '15px',
+                backgroundColor: '#000',
+                '-webkit-border-radius': '10px',
+                '-moz-border-radius': '10px',
+                opacity: .5,
+                color: '#fff'
+            },
+            message: 'Aguarde un instante...'
+        });
+
+    }
+
     $('.new_model').tooltip({ placement: "top" });
 
     $('#cerrarSesion').click(cerrarSesion);
@@ -377,10 +402,10 @@ $(function () {
 
     $(document).on('click', '.btnEditCreateEvento', ticketEvento);
 
-    $("a.single_image").fancybox({
-        'type': 'image',
-        'showCloseButton': 'true',
-    });
+    //$("a.single_image").fancybox({
+    //    'type': 'image',
+    //    'showCloseButton': 'true',
+    //});
 
     $('.selectpicker').selectpicker({
         style: 'btn-primary',
@@ -428,34 +453,34 @@ $(function () {
     validarLocalidad();
     setFormatTables();
 
-    $(".various").on('click', function () {
+    //$(".various").on('click', function () {
 
-        var vid_id = $(this).attr("href").replace('#','');
-        console.log(vid_id);
+    //    var vid_id = $(this).attr("href").replace('#','');
+    //    console.log(vid_id);
 
-        $.ajax({
-            type: 'POST',
-            data: { idVideo: vid_id },
-            url: "/LogsRegistrosSistema/SetVideoLog",
-            success: function (data) {
-            },
-            error: function (data) {
-            }
-        });
-    });
+    //    $.ajax({
+    //        type: 'POST',
+    //        data: { idVideo: vid_id },
+    //        url: "/LogsRegistrosSistema/SetVideoLog",
+    //        success: function (data) {
+    //        },
+    //        error: function (data) {
+    //        }
+    //    });
+    //});
 
 
-    $(".various").fancybox({
-        maxWidth: 800,
-        maxHeight: 600,
-        fitToView: false,
-        width: '640px',
-        height: '264px',
-        autoSize: false,
-        closeClick: false,
-        openEffect: 'none',
-        closeEffect: 'none'
-    });
+    //$(".various").fancybox({
+    //    maxWidth: 800,
+    //    maxHeight: 600,
+    //    fitToView: false,
+    //    width: '640px',
+    //    height: '264px',
+    //    autoSize: false,
+    //    closeClick: false,
+    //    openEffect: 'none',
+    //    closeEffect: 'none'
+    //});
 
     function setViewOnMap() {
 
