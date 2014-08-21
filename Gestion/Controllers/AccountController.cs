@@ -217,7 +217,7 @@ namespace Gestion.Controllers
 
             // If we got this far, something failed, redisplay form
             ModelState.AddModelError("", "Usuario y/o contraseña incorrecto/s.");
-            return View("Login","_LayoutLogin",model);
+            return View("Login","_TemplateGestion_Login",model);
         }
 
         //

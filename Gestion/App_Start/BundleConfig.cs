@@ -23,6 +23,13 @@ namespace Gestion
                   "~/Scripts/sbadmin/general.js"
              ));
 
+            bundles.Add(new ScriptBundle("~/bundles/gestion_js").Include(
+                    "~/Scripts/sbadmin/bootbox.min.js",
+                    "~/Scripts/sbadmin/bootstrap-datepicker.js",
+                    "~/Scripts/sbadmin/bootstrap-select.min.js",
+                    "~/Scripts/template_scripts/js/login.js"
+                ));
+
             bundles.Add(new StyleBundle("~/bundles/AdminCss").Include(
                    "~/Content/sbadmin/bootstrap.css",
                    "~/Content/font-awesome/css/font-awesome.css",

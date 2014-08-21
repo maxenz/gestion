@@ -694,6 +694,7 @@
     <Content Include="Scripts\sbadmin\morris\chart-data-morris.js" />
     <Content Include="Scripts\sbadmin\tablesorter\jquery.tablesorter.js" />
     <Content Include="Scripts\sbadmin\tablesorter\tables.js" />
+    <Content Include="Scripts\template_scripts\js\general.js" />
     <Content Include="Scripts\template_scripts\js\base.js" />
     <Content Include="Scripts\template_scripts\js\bootstrap.js" />
     <Content Include="Scripts\template_scripts\js\chart.min.js" />
@@ -710,6 +711,7 @@
     <Content Include="Scripts\template_scripts\js\guidely\guidely.css" />
     <Content Include="Scripts\template_scripts\js\guidely\guidely.min.js" />
     <Content Include="Scripts\template_scripts\js\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\template_scripts\js\login.js" />
     <Content Include="Scripts\template_scripts\js\signin.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
