@@ -29,7 +29,7 @@ namespace Gestion.HtmlHelpers
             string actual_controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
             string statusPage = "";
 
-            if (hrefController == actual_controller) statusPage = "active";
+            if (actual_controller.Contains(hrefController)) statusPage = "active";
 
             string res = String.Format("<li class=\"{0}\"><a href=\"{1}\"><i class=\"{2}\"></i><span>{3}</a></li>",statusPage,href,icon,title);
 

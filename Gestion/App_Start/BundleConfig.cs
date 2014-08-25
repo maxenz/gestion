@@ -27,6 +27,7 @@ namespace Gestion
                 "~/Scripts/template_scripts/js/jquery-1.7.2.min.js",
                 "~/Scripts/template_scripts/js/excanvas.min.js",
                 "~/Scripts/template_scripts/js/bootstrap.js",
+                "~/Scripts/sbadmin/jquery.fancybox.pack.js",
                 "~/Scripts/sbadmin/bootbox.min.js",
                 "~/Scripts/sbadmin/bootstrap-datepicker.js",
                 "~/Scripts/sbadmin/bootstrap-select.min.js",
@@ -47,6 +48,7 @@ namespace Gestion
                     "~/Content/template_resources/css/bootstrap-responsive.min.css",
                     "~/Content/template_resources/css/font-awesome.css",
                     "~/Content/template_resources/css/style.css",
+                    "~/Content/sbadmin/jquery.fancybox.css",
                     "~/Content/sbadmin/datepicker.css",
                     "~/Content/template_resources/css/bootstrap.min.css"            
             ));

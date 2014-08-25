@@ -2,34 +2,43 @@
     var medios = ViewBag.MediosDifusion;
 }
 
-<div class="row">
-    <div class="col-lg-4">
-        <h1>Mapa <small>Clientes por el mundo.</small></h1>
-    </div>
-    @*    <div class="col-lg-3" style="margin-top:26px">
-            <select id="selFiltroTipoCli" name="selFiltroTipoCli" class="selectpicker">
-                <option value="1">Todos</option>
-                <option value="2">Vendidos</option>
-                <option value="3">En Gesti&oacute;n</option>
-            </select>
-    </div>*@
-    <div class="col-lg-8" style="margin-top: 10px">
-        <div class="well well-sm">
-            <div class="row">
-                @foreach (var item in medios)
-                {
-                    <div class="col-lg-3">
-                        <div class="input-group" >
-                            <span class="input-group-addon">
-                                <input type="checkbox" class="chkMediosDifusion" value="@item.ID" />
-                            </span>
-                            <input type="text" class="form-control txtMediosDifusion" readonly="true" value="@item.Descripcion" />
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <div class="row" style="margin-top: -20px">
+                <div class="span10 offset1">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <i class="icon-filter"></i>
+                            <h3>Filtros</h3>
                         </div>
+                        <!-- /widget-header -->
+                        <div class="widget-content" style="margin-top: -10px; padding-bottom: 10px">
+                            @foreach (var item in medios)
+                            {
+                                <div class="span3">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" class="chkMediosDifusion" value="@item.ID" />
+                                        </span>
+                                        <input type="text" class="form-control txtMediosDifusion" readonly="true" value="@item.Descripcion" />
+                                    </div>
+                                </div>
+                            }
+                            <!-- /bar-chart -->
+                        </div>
+                        <!-- /widget-content -->
                     </div>
-                }
-
+                </div>
             </div>
+
+
+
+
+
+
+
         </div>
+        <!-- /main-inner -->
     </div>
 </div>
-<hr />

@@ -821,7 +821,6 @@
     <Content Include="Views\Usuarios\Create.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\_Form.cshtml" />
-    <Content Include="Views\Usuarios\_Header.cshtml" />
     <Content Include="Views\Usuarios\_Usuarios.cshtml" />
     <Content Include="Views\ClientesUsuarios\Index.cshtml" />
     <Content Include="Views\ClientesUsuarios\Create.cshtml" />
@@ -831,7 +830,6 @@
     <Content Include="Views\ClientesUsuarios\_Header.cshtml" />
     <Content Include="Views\Contactos\Index.cshtml" />
     <Content Include="Views\Contactos\_Contactos.cshtml" />
-    <Content Include="Views\Contactos\_Header.cshtml" />
     <Content Include="Views\ClientesLicencias\Index.cshtml" />
     <Content Include="Views\ClientesLicencias\Create.cshtml" />
     <Content Include="Views\ClientesLicencias\Edit.cshtml" />
@@ -840,7 +838,6 @@
     <Content Include="Views\ClientesLicencias\_Header.cshtml" />
     <Content Include="Views\ClientesLicencias\_ModulosExcluidos.cshtml" />
     <Content Include="Views\LicenciasLogs\Index.cshtml" />
-    <Content Include="Views\LicenciasLogs\_Header.cshtml" />
     <Content Include="Views\LicenciasLogs\_Logs.cshtml" />
     <Content Include="Views\Shared\_TemplatePrincipal.cshtml" />
     <Content Include="Views\Clientes\_BottomForm.cshtml" />

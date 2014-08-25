@@ -40,10 +40,10 @@ namespace Gestion.Controllers
 
              if (Request.IsAjaxRequest())
              {
-                 return PartialView("_Usuarios", qUsr.ToPagedList(page, 6));
+                 return PartialView("_Usuarios", qUsr.ToPagedList(page, 5));
              }
 
-             return View(qUsr.ToPagedList(page, 6));
+             return View(qUsr.ToPagedList(page, 5));
          }
 
          public ActionResult Edit(int id = 0)

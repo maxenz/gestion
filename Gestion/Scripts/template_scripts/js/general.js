@@ -157,15 +157,18 @@ $(function () {
                     className: "btn-danger",
                     callback: function () {
                         var $url = $a.attr("href");
+                        blockInterface();
                         $.ajax({
                             url: $url,
                             type: 'POST',
                             success: function (data) {
                                 var target = $a.attr("data-gestion-target");
                                 $(target).replaceWith(data);
+                                $.unblockUI();
                             },
                             error: function (error) {
                                 alert(error.responseText);
+                                $.unblockUI();
                             }
                         });
                     }
@@ -453,34 +456,34 @@ $(function () {
     validarLocalidad();
     setFormatTables();
 
-    //$(".various").on('click', function () {
+    $(".various").on('click', function () {
 
-    //    var vid_id = $(this).attr("href").replace('#','');
-    //    console.log(vid_id);
+        var vid_id = $(this).attr("href").replace('#','');
+        console.log(vid_id);
 
-    //    $.ajax({
-    //        type: 'POST',
-    //        data: { idVideo: vid_id },
-    //        url: "/LogsRegistrosSistema/SetVideoLog",
-    //        success: function (data) {
-    //        },
-    //        error: function (data) {
-    //        }
-    //    });
-    //});
+        $.ajax({
+            type: 'POST',
+            data: { idVideo: vid_id },
+            url: "/LogsRegistrosSistema/SetVideoLog",
+            success: function (data) {
+            },
+            error: function (data) {
+            }
+        });
+    });
 
 
-    //$(".various").fancybox({
-    //    maxWidth: 800,
-    //    maxHeight: 600,
-    //    fitToView: false,
-    //    width: '640px',
-    //    height: '264px',
-    //    autoSize: false,
-    //    closeClick: false,
-    //    openEffect: 'none',
-    //    closeEffect: 'none'
-    //});
+    $(".various").fancybox({
+        maxWidth: 800,
+        maxHeight: 600,
+        fitToView: false,
+        width: '640px',
+        height: '264px',
+        autoSize: false,
+        closeClick: false,
+        openEffect: 'none',
+        closeEffect: 'none'
+    });
 
     function setViewOnMap() {
 
