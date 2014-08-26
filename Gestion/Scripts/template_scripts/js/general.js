@@ -4,7 +4,7 @@ $(function () {
     //en la tabla ClientesGestiones, corto el texto si es mayor a 20 caracteres
     function setFormatTables() {
 
-        $("table > tbody > tr > td").each(function () {
+        $("#tbGestion > tbody > tr > td").each(function () {
 
             var str = $(this).html().trim();
 
