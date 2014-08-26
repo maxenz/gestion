@@ -153,6 +153,7 @@ namespace Gestion.Controllers
 
                  if (!model.Password.Equals("") && !model.ConfirmPassword.Equals(""))
                  {
+                   
                      var token = WebSecurity.GeneratePasswordResetToken(model.UserName);
                      WebSecurity.ResetPassword(token, model.Password);
                  }

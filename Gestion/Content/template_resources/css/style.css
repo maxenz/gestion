@@ -1292,3 +1292,16 @@ color: #333;
     text-align:center !important;
 }
 
+label.control-label {
+    font-weight:bold;
+}
+
+.field-validation-error {
+    font-weight:bold;
+    color:red;
+}
+
+.rojo {
+    color:red;
+}
+
