@@ -8,72 +8,166 @@
     }
     
 }
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Registro de Clientes</h3>
+
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <div class="span6 offset3">
+                <div class="widget">
+                    <div class="widget-header">
+                        <i class="icon-key"></i>
+                        <h3>Registro de Clientes</h3>
+                    </div>
+
+                    <div class="widget-content">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label" for="RazonSocial">Razon Social</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.RazonSocial, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.RazonSocial)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="SitioWeb">Sitio Web</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.SitioWeb, new { @class = "span5" })
+                                    @Html.ValidationMessageFor(model => model.SitioWeb)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="Revendedor">Revendedor</label>
+                                <div class="controls">
+                                    @Html.DropDownListFor(x => x.RevendedorID, new SelectList(ViewBag.Revendedores, "ID", "Nombre"), "Seleccione Revendedor", new { @class = "span5" })
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="Localidad">Localidad</label>
+                                <div class="controls">
+                                    @Html.DropDownListFor(x => x.LocalidadID, new SelectList(ViewBag.Localidades, "ID", "Descripcion"), new { @class = "selectLoc span5", data_validar_localidad = "true" })
+                                    @Html.ValidationMessageFor(model => model.LocalidadID)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="Pais">Pa&iacute;s</label>
+                                <div class="controls">
+                                    <input type="text" disabled="disabled" id="paisCliente" class="span5" />
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="Provincia">Provincia</label>
+                                <div class="controls">
+                                    <input type="text" disabled="disabled" id="provCliente" class="form-control" />
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="CuentaCorrienteID">Cuenta Corriente ID</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.CuentaCorrienteID, new { @class = "span5" })
+                                    @Html.ValidationMessageFor(model => model.CuentaCorrienteID)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="Calle">Calle</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.Calle, new { @class = "span5" })
+                                    @Html.ValidationMessageFor(model => model.Calle)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+
+                            <div class="control-group">
+                                <label class="control-label" for="Altura">Altura</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.Altura, new { @class = "span5" })
+                                    @Html.ValidationMessageFor(model => model.Altura)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+
+                            <div class="control-group">
+                                <label class="control-label" for="Departamento">Departamento</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.Departamento, new { @class = "span5" })
+                                    @Html.ValidationMessageFor(model => model.Departamento)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+
+                            <div class="control-group">
+                                <label class="control-label" for="Piso">Piso</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.Piso, new { @class = "span5" })
+                                    @Html.ValidationMessageFor(model => model.Piso)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="Piso">Ubicaci&oacute;n en el mapa</label>
+                                <div class="controls">
+                                    @if ((Model != null))
+                                    {
+                                        if (Model.Latitud != null)
+                                        {
+                                        <a href="@latlng" class="btn btn-primary various fancybox.iframe btn-actions"><i class="icon-globe"></i>Ver Ubicación</a>
+                                        }
+                                    }
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="MedioDifusionID">Medio de Difusi&oacute;n</label>
+                                <div class="controls">
+                                    @Html.DropDownListFor(x => x.MedioDifusionID, new SelectList(ViewBag.MediosDifusion, "ID", "Descripcion"), new { @class = "span5" })
+                                    @Html.ValidationMessageFor(model => model.MedioDifusionID)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <br>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-actions">Guardar</button>
+                                <button class="btn">Cancelar</button>
+                            </div>
+                            <!-- /form-actions -->
+                        </fieldset>
+                    </div>
+                </div>
             </div>
-            <div class="panel-body">
-                <div class="row show-grid">
-                    <div class="col-md-6">
-                        @Html.TextBoxFor(model => model.RazonSocial, new { @class = "form-control", @placeholder = "Razón Social", autofocus = "" })
-                        @Html.ValidationMessageFor(model => model.RazonSocial)
-                    </div>
-                    <div class="col-md-3">
-                        @Html.TextBoxFor(model => model.SitioWeb, new { @class = "form-control", @placeholder = "Sitio Web" })
-                        @Html.ValidationMessageFor(model => model.SitioWeb)
-                    </div>
-                    <div class="col-md-3">
-                        @Html.DropDownListFor(x => x.RevendedorID, new SelectList(ViewBag.Revendedores, "ID", "Nombre"), "Seleccione Revendedor", new { @class = "selectpicker" })
-                    </div>
-                </div>
-
-                <div class="row show-grid">
-                    <div class="col-md-4">
-                        @Html.DropDownListFor(x => x.LocalidadID, new SelectList(ViewBag.Localidades, "ID", "Descripcion"), new { @class = "selectpicker", data_validar_localidad = "true" })
-                        @Html.ValidationMessageFor(model => model.LocalidadID)
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" disabled="disabled" id="paisCliente" class="form-control" />
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" disabled="disabled" id="provCliente" class="form-control" />
-                    </div>
-                    <div class="col-md-2">
-                        @Html.TextBoxFor(model => model.CuentaCorrienteID, new { @class = "form-control", @placeholder = "Cta. Corr. ID" })
-                        @Html.ValidationMessageFor(model => model.CuentaCorrienteID)
-                    </div>
-                </div>
-
-                <div class="row show-grid">
-                    <div class="col-md-3">
-                        @Html.TextBoxFor(model => model.Calle, new { @class = "form-control", @placeholder = "Calle" })
-                        @Html.ValidationMessageFor(model => model.Calle)
-                    </div>
-                    <div class="col-md-2">
-                        @Html.TextBoxFor(model => model.Altura, new { @class = "form-control", @placeholder = "Altura" })
-                        @Html.ValidationMessageFor(model => model.Altura)
-                    </div>
-                    <div class="col-md-1">
-                        @Html.TextBoxFor(model => model.Departamento, new { @class = "form-control", @placeholder = "Depto" })
-                        @Html.ValidationMessageFor(model => model.Departamento)
-                    </div>
-                    <div class="col-md-1">
-                        @Html.TextBoxFor(model => model.Piso, new { @class = "form-control", @placeholder = "Piso" })
-                        @Html.ValidationMessageFor(model => model.Piso)
-                    </div>
-                    <div class="col-md-2">
-                        @if ((Model != null))
-                        {
-                            if (Model.Latitud != null)
-                            {
-                            <a href="@latlng" class="btn btn-primary various fancybox.iframe" style="padding-right:18%"><span class="glyphicon glyphicon-globe iconRightMenu"></span>Ver Ubicación</a>
-                            }
-                        }
-                    </div>
-                    <div class="col-md-3">
-                        @Html.DropDownListFor(x => x.MedioDifusionID, new SelectList(ViewBag.MediosDifusion, "ID", "Descripcion"), new { @class = "selectpicker" })
-                        @Html.ValidationMessageFor(model => model.MedioDifusionID)
-                    </div>
-                </div>
+        </div>
+    </div>
+    <!-- /container -->
+</div>

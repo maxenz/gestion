@@ -586,6 +586,7 @@
     <Content Include="Content\template_resources\font\fontawesome-webfontd41d.eot" />
     <Content Include="Content\template_resources\font\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\Maxo.pubxml" />
+    <Content Include="img\img_admin.jpg" />
     <Content Include="img\img_usuario.png" />
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

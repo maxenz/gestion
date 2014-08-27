@@ -209,19 +209,27 @@ namespace Gestion.Controllers
 
         private void sendEmail(string to, string subject, string body)
         {
-            MailMessage mailMsg = new MailMessage();
-            mailMsg.To.Add(to);
-            MailAddress mailAddress = new MailAddress("sistemas@paramedic.com.ar");
-            mailMsg.From = mailAddress;
-            mailMsg.Subject = subject;
-            mailMsg.Body = body;
-            mailMsg.IsBodyHtml = true;
+            try
+            {
+                MailMessage mailMsg = new MailMessage();
+                mailMsg.To.Add(to);
+                MailAddress mailAddress = new MailAddress("sistemas@paramedic.com.ar");
+                mailMsg.From = mailAddress;
+                mailMsg.Subject = subject;
+                mailMsg.Body = body;
+                mailMsg.IsBodyHtml = true;
 
-            SmtpClient smtpClient = new SmtpClient("smtp.fibertel.com.ar", 25);
-            System.Net.NetworkCredential credentials =
-               new System.Net.NetworkCredential("sistemas.paramedic.com.ar", "pwsi01");
-            smtpClient.Credentials = credentials;
-            smtpClient.Send(mailMsg);
+                SmtpClient smtpClient = new SmtpClient("smtp.fibertel.com.ar", 25);
+                System.Net.NetworkCredential credentials =
+                   new System.Net.NetworkCredential("sistemas.paramedic.com.ar", "pwsi01");
+                smtpClient.Credentials = credentials;
+                smtpClient.Send(mailMsg);
+            }
+            catch (Exception e)
+            {
+                
+            }
+
 
         }
 

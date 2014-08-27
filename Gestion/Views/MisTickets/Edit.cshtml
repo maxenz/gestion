@@ -12,32 +12,30 @@
                             <h3>@Model.Asunto</h3>
                         </div>
                         <!-- /widget-header -->
-                        <div class="widget-content" style="margin-top: -10px; padding-bottom: 18px">
-                            <div id="listaEventos">
+                        <div class="widget-content">
 
-                                @Html.Partial("_ListaEventos", Model)
+                            @Html.Partial("_ListaEventos", Model)
 
-                            </div>
-
-                            <div id="bottomEditTicket">
-
-                                @if (Model.Resuelto)
-                                {
-                                    @Html.Partial("_Cerrado")
-                                }
-                                else if (User.IsInRole("Administrador"))
-                                {
-                                    @Html.Partial("_BotonResponder")
-                                }
-                                else
-                                {
-                                    @Html.Partial("_BotonConsultaCerrar")
-                                }
-
-                            </div>
                             <!-- /bar-chart -->
                         </div>
                         <!-- /widget-content -->
+                    </div>
+
+                    <div id="bottomEditTicket">
+
+                        @if (Model.Resuelto)
+                        {
+                            @Html.Partial("_Cerrado")
+                        }
+                        else if (User.IsInRole("Administrador"))
+                        {
+                            @Html.Partial("_BotonResponder")
+                        }
+                        else
+                        {
+                            @Html.Partial("_BotonConsultaCerrar")
+                        }
+
                     </div>
                 </div>
             </div>
@@ -48,7 +46,7 @@
 
 
 
-   
+
 
 
 

@@ -1,36 +1,58 @@
 ﻿@model Gestion.Models.Revendedor
 
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Registro de Revendedores</h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-5">
-                        @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", @placeholder = "Nombre de Revendedor", autofocus = "" })
-                        @Html.ValidationMessageFor(model => model.Nombre)
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <div class="span6 offset3">
+                <div class="widget">
+                    <div class="widget-header">
+                        <i class="icon-key"></i>
+                        <h3>Registro de Productos</h3>
                     </div>
-                    <div class="col-md-4">
-                        @Html.TextBoxFor(model => model.Comision, new { @class = "form-control", @placeholder = "Comisión" })
-                        @Html.ValidationMessageFor(model => model.Comision)
+                    <div class="widget-content">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label" for="Nombre">Nombre</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.Nombre, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.Nombre)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="Comision">Comisi&oacute;n</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.Comision, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.Comision)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+                            <div class="control-group">
+                                <label class="control-label" for="BajoContrato">Bajo contrato?</label>
+                                <div class="controls">
+                                    @Html.EditorFor(model => model.BajoContrato, new { @class = "form-control", @placeholder = "Contrato?" })
+                                    @Html.ValidationMessageFor(model => model.BajoContrato)
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+
+                            <br>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-actions">Guardar</button>
+                                <button class="btn">Cancelar</button>
+                            </div>
+                            <!-- /form-actions -->
+                        </fieldset>
                     </div>
-                    <div class="col-md-3" style="margin-top:5px">
-                        @Html.LabelFor(model => model.BajoContrato)
-                        @Html.EditorFor(model => model.BajoContrato, new { @class = "form-control", @placeholder = "Contrato?" })
-                        @Html.ValidationMessageFor(model => model.BajoContrato)
-                    </div>
-                </div>
-          
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <input type="submit" value="Guardar" class="btn btn-block btn-primary btnSubmit" />
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
 
-
+    <!-- /container -->
+</div>
