@@ -30,7 +30,10 @@ namespace Gestion
                 "~/Scripts/sbadmin/jquery.fancybox.pack.js",
                 "~/Scripts/sbadmin/bootbox.min.js",
                 "~/Scripts/sbadmin/bootstrap-datepicker.js",
+                "~/Scripts/sbadmin/bootstrap-switch.js",
                 "~/Scripts/sbadmin/bootstrap-select.min.js",
+                "~/Scripts/sbadmin/messenger.min.js",
+                "~/Scripts/sbadmin/messenger-theme-future.min.js",
                 "~/Scripts/template_scripts/js/base.js",
                 "~/Scripts/template_scripts/js/jquery.blockUI.js"
             ));
@@ -50,7 +53,9 @@ namespace Gestion
                     "~/Content/template_resources/css/style.css",
                     "~/Content/sbadmin/jquery.fancybox.css",
                     "~/Content/sbadmin/datepicker.css",
-                    "~/Content/template_resources/css/bootstrap.min.css"            
+                    "~/Content/sbadmin/messenger.min.css",
+                    "~/Content/sbadmin/messenger-theme-future.min.css",
+                    "~/Content/sbadmin/bootstrap-switch.css"           
             ));
 
             bundles.Add(new StyleBundle("~/bundles/signin_css").Include(

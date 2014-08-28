@@ -10,15 +10,8 @@
 }
 
 <div id="ctaCorrienteList">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Cuenta Corriente</h3>
-                </div>
-                <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-4 col-lg-offset-8">
+                        <div class="span4 offset4">
                             <div class="well well-sm centrado">
                                 Saldo al @hoy:
                                 @if (deudor == 1)
@@ -33,26 +26,26 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="span10 offset1" >
                             <table class="table table-hover table-striped table-bordered tableIndex">
                                 <thead>
                                     <tr>
-                                        <th class="col-lg-2 centrado">
+                                        <th class="span2 centrado">
                                             @Html.DisplayNameFor(model => model.First().Fecha)
                                         </th>
-                                        <th class="col-lg-1 centrado">
+                                        <th class="span1 centrado">
                                             @Html.DisplayNameFor(model => model.First().TipoComprobante)
                                         </th>
-                                        <th class="col-lg-3 centrado">
+                                        <th class="span3 centrado">
                                             @Html.DisplayNameFor(model => model.First().NroComprobante)
                                         </th>
-                                        <th class="col-lg-2 centrado">       
+                                        <th class="span2 centrado">
                                             @Html.DisplayNameFor(model => model.First().Debe)
                                         </th>
-                                        <th class="col-lg-2 centrado">
+                                        <th class="span2 centrado">
                                             @Html.DisplayNameFor(model => model.First().Haber)
                                         </th>
-                                        <th class="col-lg-2 centrado">
+                                        <th class="span2 centrado">
                                             @Html.DisplayNameFor(model => model.First().Saldo)
                                         </th>
 
@@ -62,28 +55,28 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td class="col-lg-2 centrado">
+                                            <td class="span2 centrado">
                                                 @Html.DisplayFor(modelItem => item.Fecha)
                                             </td>
-                                            <td class="col-lg-1 centrado">
+                                            <td class="span1 centrado">
                                                 @Html.DisplayFor(modelItem => item.TipoComprobante)
                                             </td>
-                                            <td class="col-lg-3 centrado mail">
+                                            <td class="span3 centrado mail">
                                                 @Html.DisplayFor(modelItem => item.NroComprobante)
                                             </td>
-                                            <td class="col-lg-2 right">
+                                            <td class="span2 right">
                                                 @if (item.Debe != 0.00)
                                                 {
                                                     @Html.DisplayFor(modelItem => item.Debe)
                                                 }
                                             </td>
-                                            <td class="col-lg-2 right">
+                                            <td class="span2 right">
                                                 @if (item.Haber != 0.00)
                                                 {
                                                     @Html.DisplayFor(modelItem => item.Haber)
                                                 }
                                             </td>
-                                            <td class="col-lg-2 right">
+                                            <td class="span2 right">
                                                 @if (item.Saldo != 0.00)
                                                 {
                                                     @Html.DisplayFor(modelItem => item.Saldo)
@@ -99,7 +92,3 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>

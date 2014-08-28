@@ -1,34 +1,27 @@
 ﻿@model IList<Gestion.Models.ClientesGestion>
 
 <div id="clientesGestionesList">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Gestiones del Cliente</h3>
-                </div>
-                <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="span10 offset1">
                             <table class="table table-hover table-striped table-bordered tableIndex" id="tbGestion">
                                 <thead>
                                     <tr>
-                                        <th class="col-lg-2centrado">
+                                        <th class="span2 centrado">
                                             @Html.DisplayNameFor(model => model.First().Fecha)
                                         </th>
-                                        <th class="col-lg-3 centrado">
+                                        <th class="span2 centrado">
                                             @Html.DisplayNameFor(model => model.First().Estado.Descripcion)
                                         </th>
-                                        <th class="col-lg-2 centrado">
+                                        <th class="span4 centrado">
                                             @Html.DisplayNameFor(model => model.First().Observaciones)
                                         </th>
-                                        <th class="col-lg-2 centrado">
+                                        <th class="span2 centrado">
                                             @Html.DisplayNameFor(model => model.First().FechaRecontacto)
                                         </th>
 
-                                        <th class="col-lg-1 centrado">PDF</th>
-                                        <th class="col-lg-1 centrado"></th>
-                                        <th class="col-lg-1 centrado"></th>
+                                        <th class="span1 centrado">PDF</th>
+                                        <th class="span1 centrado"></th>
+                                        <th class="span1 centrado"></th>
 
                                     </tr>
                                 </thead>
@@ -36,29 +29,29 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td class="col-lg-2 centrado">
+                                            <td class="span2 centrado">
                                                 @Html.DisplayFor(modelItem => item.Fecha)
                                             </td>
-                                            <td class="col-lg-3 centrado">
+                                            <td class="span2 centrado">
                                                 @Html.DisplayFor(modelItem => item.Estado.Descripcion)
                                             </td>
-                                            <td class="col-lg-2 centrado">
+                                            <td class="span4 centrado">
                                                 @Html.DisplayFor(modelItem => item.Observaciones)
                                             </td>
-                                            <td class="col-lg-2 centrado">
+                                            <td class="span2 centrado">
                                                 @Html.DisplayFor(modelItem => item.FechaRecontacto)
                                             </td>
-                                            <td class="col-lg-1 centrado">
+                                            <td class="span1 centrado">
                                                 @if (item.PdfGestion != null)
                                                 {
-                                                    <a href="@item.ClienteID/ClientesGestiones/PDFDisplay/@item.ID" target="_blank" ><span class="glyphicon glyphicon-list-alt azulOscuro"></span></a>
+                                                    <a href="@item.ClienteID/ClientesGestiones/PDFDisplay/@item.ID" target="_blank"><span class="glyphicon glyphicon-list-alt azulOscuro"></span></a>
                                                 }
                                             </td>
-                                            <td class="col-lg-1 centrado">
-                                                <a href="@item.ClienteID/ClientesGestiones/Edit/@item.ID"><span class="glyphicon glyphicon-edit azulOscuro"></span></a>
+                                            <td class="centrado">
+                                                <a href="@item.ClienteID/ClientesGestiones/Edit/@item.ID" class="btn btn-small btn-success btn-actions"><i class="btn-icon-only icon-pencil"> </i></a>
                                             </td>
-                                            <td class="col-lg-1 centrado">
-                                                <a href="@item.ClienteID/ClientesGestiones/Delete/@item.ID" class="delete" data-gestion-target="#clientesGestionesList"><span class="glyphicon glyphicon-remove-circle rojo"></span></a>
+                                            <td class="centrado">
+                                                <a href="@item.ClienteID/ClientesGestiones/Delete/@item.ID" class="btn btn-small btn-success btn-actions delete" data-gestion-target="#clientesGestionesList"><i class="btn-icon-only icon-remove"> </i></a>
                                             </td>
 
                                         </tr>
@@ -68,15 +61,11 @@
 
                             <div class="row">
 
-                                <div class="col-md-4 col-md-offset-4 ">
-                                    <a href="@ViewBag.Cliente_ID/ClientesGestiones/Create" class="btn btn-block  btn-primary btnSubmit">Agregar Gesti&oacute;n</a>
+                                <div class="span4 offset4 ">
+                                    <a href="@ViewBag.Cliente_ID/ClientesGestiones/Create" class="btn btn-block  btn-primary btnSubmit btn-actions">Agregar Gesti&oacute;n</a>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>

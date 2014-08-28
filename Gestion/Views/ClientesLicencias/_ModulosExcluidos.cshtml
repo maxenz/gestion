@@ -8,13 +8,11 @@
         {
             
         <div class="row">
-            <div class="col-lg-9 col-lg-offset-3">
-                <div class="make-switch make-switch-medium" data-text-label="@mod.Descripcion"
-             data-on-label="<i class='glyphicon glyphicon-ok blanco'></i>"
-             data-off-label="<i class='glyphicon glyphicon-remove'></i>">
+                <div class="make-switch make-switch-full span4 offset1" data-text-label="@mod.Descripcion"
+             data-on-label="<i class='icon-ok'></i>"
+             data-off-label="<i class='icon-remove'></i>">
                     <input type="checkbox" name="selectedProdMod" value="@mod.ProductoModuloID" id="@mod.ProductoModuloID"  @(Html.Raw(mod.Asignado ? "checked" : "")) />
                 </div>
-            </div>
         </div>
                        
         }
