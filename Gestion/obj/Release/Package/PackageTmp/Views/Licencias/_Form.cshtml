@@ -1,31 +1,48 @@
 ﻿@model Gestion.Models.Licencia
 
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Registro de Terminales</h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        @Html.TextBoxFor(model => model.Serial, new { @class = "form-control", @placeholder = "Serial de la licencia", autofocus = true })
-                        @Html.ValidationMessageFor(model => model.Serial)
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <div class="span6 offset3">
+                <div class="widget">
+                    <div class="widget-header">
+                        <i class="icon-key"></i>
+                        <h3>Registro de Licencias</h3>
                     </div>
-                    <div class="col-md-6">
-                        @Html.TextBoxFor(model => model.NumeroDeLlave, new { @class = "form-control", @placeholder = "Nro de Hardkey NET"})
-                        @Html.ValidationMessageFor(model => model.NumeroDeLlave)
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <input type="submit" value="Guardar" class="btn btn-block btn-primary btnSubmit" />
+
+                    <div class="widget-content">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label" for="Serial">Serial</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.Serial, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.Serial)
+                                </div> <!-- /controls -->
+                            </div> <!-- /control-group -->
+
+                            <div class="control-group">
+                                <label class="control-label" for="NumeroDeLlave">Nro. de Llave</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.NumeroDeLlave, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.NumeroDeLlave)
+                                </div> <!-- /controls -->
+                            </div> <!-- /control-group -->
+
+                            <br>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-actions">Guardar</button>
+                                <button class="btn">Cancelar</button>
+                            </div> <!-- /form-actions -->
+                        </fieldset>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+
+    <!-- /container -->
 </div>
+
 
 

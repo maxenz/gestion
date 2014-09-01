@@ -11,7 +11,8 @@
     <link href="//vjs.zencdn.net/4.2/video-js.css" rel="stylesheet">
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="Scripts/sbadmin/map.js"></script>
-
+
+
     @Styles.Render("~/bundles/AdminCss")
 
     <title>Shaman SGE - Gesti&oacute;n</title>
@@ -36,7 +37,6 @@
                     <ul class="nav navbar-nav side-nav" id="navOptions">
                         @if (User.IsInRole("Administrador"))
                         {
-
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-download glyph-nav-bar"></span>Maestros <b class="caret"></b></a>
                                 <ul class="dropdown-menu">

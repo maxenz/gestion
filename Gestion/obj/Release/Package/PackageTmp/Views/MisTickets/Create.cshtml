@@ -1,7 +1,5 @@
 ﻿@model Gestion.Models.Ticket
 
-@Html.Partial("_Header",Model)
-
 @using (Html.BeginForm("Create","MisTickets",
     FormMethod.Post, new { enctype = "multipart/form-data" }))
 {

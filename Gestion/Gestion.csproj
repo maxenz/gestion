@@ -436,6 +436,8 @@
     <Content Include="Content\font-awesome\font\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\Flat-UI-Icons.dev.svg" />
     <Content Include="Content\fonts\Flat-UI-Icons.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.svgz" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\lato\lato-black-webfont.svg" />
     <Content Include="Content\fonts\lato\lato-bold-webfont.svg" />
@@ -491,6 +493,8 @@
     <Content Include="Content\template_resources\img\signin\twitter_btn.png" />
     <Content Include="Content\template_resources\img\signin\user.png" />
     <Content Include="favicon.ico" />
+    <Content Include="font\fontawesome-webfont.svg" />
+    <Content Include="font\fontawesome-webfont.svgz" />
     <Content Include="Global.asax" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -585,9 +589,30 @@
     <Content Include="Content\template_resources\font\fontawesome-webfont.woff" />
     <Content Include="Content\template_resources\font\fontawesome-webfontd41d.eot" />
     <Content Include="Content\template_resources\font\FontAwesome.otf" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="font\fontawesome-webfont.eot" />
+    <Content Include="font\fontawesome-webfont.ttf" />
+    <Content Include="font\fontawesome-webfont.woff" />
+    <Content Include="font\fontawesome-webfontd41d.eot" />
+    <Content Include="font\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\Maxo.pubxml" />
+    <Content Include="img\body-bg.png" />
+    <Content Include="img\glyphicons-halflings-white.html" />
+    <Content Include="img\glyphicons-halflings.html" />
+    <Content Include="img\icons-sa7c41345d9.png" />
     <Content Include="img\img_admin.jpg" />
     <Content Include="img\img_usuario.png" />
+    <Content Include="img\message_avatar1.png" />
+    <Content Include="img\message_avatar2.png" />
+    <Content Include="img\signin\check.png" />
+    <Content Include="img\signin\fb_btn.png" />
+    <Content Include="img\signin\password.png" />
+    <Content Include="img\signin\twitter_btn.png" />
+    <Content Include="img\signin\user.png" />
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

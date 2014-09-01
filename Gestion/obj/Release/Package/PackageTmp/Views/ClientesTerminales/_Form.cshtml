@@ -1,44 +1,71 @@
 ﻿@model Gestion.Models.ClientesTerminal
 
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Registro de Terminales</h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        @Html.DropDownListFor(model => model.TipoTerminalID, new SelectList(ViewBag.TipoTerminales, "id", "descripcion"), new { @class = " selectpicker" })
-                        @Html.ValidationMessageFor(model => model.TipoTerminalID)
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <div class="span6 offset3">
+                <div class="widget">
+                    <div class="widget-header">
+                        <i class="icon-key"></i>
+                        <h3>Registro de Terminal</h3>
                     </div>
-                    <div class="col-md-4">
-                        @Html.TextBoxFor(model => model.Referencia, new { @class = "form-control", @placeholder = "Referencia" })
-                        @Html.ValidationMessageFor(model => model.Referencia)
-                    </div>
-                    <div class="col-md-4">
-                        @Html.TextBoxFor(model => model.Valor1, new { @class = "form-control", @placeholder = "Valor 1" })
-                        @Html.ValidationMessageFor(model => model.Valor1)
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        @Html.TextBoxFor(model => model.Valor2, new { @class = "form-control", @placeholder = "Valor 2" })
-                        @Html.ValidationMessageFor(model => model.Valor2)
-                    </div>
-                    <div class="col-md-4">
-                        @Html.TextBoxFor(model => model.Valor3, new { @class = "form-control", @placeholder = "Valor 3" })
-                        @Html.ValidationMessageFor(model => model.Valor3)
-                    </div>
-                    <div class="col-md-4">
-                        @Html.TextBoxFor(model => model.Valor4, new { @class = "form-control", @placeholder = "Valor 4" })
-                        @Html.ValidationMessageFor(model => model.Valor4)
-                    </div>
-                </div>
+                    <div class="widget-content">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label" for="TipoTerminalID">Tipo de Terminal</label>
+                                <div class="controls">
+                                    @Html.DropDownListFor(model => model.TipoTerminalID, new SelectList(ViewBag.TipoTerminales, "id", "descripcion"), new { @class = " span5" })
+                                    @Html.ValidationMessageFor(model => model.TipoTerminalID)
+                                </div>
+                            </div>
 
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <input type="submit" value="Guardar" class="btn btn-block btn-primary btnSubmit" />
+                            <div class="control-group">
+                                <label class="control-label" for="Referencia">Referencia</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.Referencia, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.Referencia)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="Valor1">Valor 1</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.Valor1, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.Valor1)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="Valor2">Valor 2</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.Valor2, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.Valor2)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="Valor3">Valor 3</label>
+                                <div class="controls">
+                                    @Html.EditorFor(model => model.Valor3)
+                                    @Html.ValidationMessageFor(model => model.Valor3)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="Valor4">Valor 4</label>
+                                <div class="controls">
+                                    @Html.EditorFor(model => model.Valor4)
+                                    @Html.ValidationMessageFor(model => model.Valor4)
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-actions">Guardar</button>
+                                <button class="btn">Cancelar</button>
+                            </div>
+                        </fieldset>
                     </div>
                 </div>
             </div>

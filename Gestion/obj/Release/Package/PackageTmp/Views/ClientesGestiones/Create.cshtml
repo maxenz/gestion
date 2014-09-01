@@ -1,20 +1,10 @@
 ﻿@model Gestion.Models.ClientesGestion
 
-@Html.Partial("_Header",Model)
-
 <form action="/Clientes/Edit/@ViewBag.ClienteID/ClientesGestiones/Create" enctype="multipart/form-data" method="post">
 
     @Html.Partial("_Form",Model)
 
 </form>
-
-@*@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-
-    @Html.Partial("_Form",Model)
-
-}*@
 
 
 

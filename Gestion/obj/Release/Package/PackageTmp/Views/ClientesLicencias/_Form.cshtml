@@ -1,54 +1,83 @@
 ﻿@model Gestion.Models.ClientesLicencia
 
-<div class="row">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Registro de Licencias</h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        @Html.DropDownListFor(model => model.LicenciaID, new SelectList(ViewBag.Licencias, "ID", "Serial"), new { @class = " selectpicker" })
-                        @Html.ValidationMessageFor(model => model.LicenciaID)
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <div class="span6 offset3">
+                <div class="widget">
+                    <div class="widget-header">
+                        <i class="icon-key"></i>
+                        <h3>Registro de Contacto</h3>
                     </div>
-                    <div class="col-md-4">
-                        @Html.TextBoxFor(model => model.CnnDataSource, new { @class = "form-control", @placeholder = "Data Source" })
-                        @Html.ValidationMessageFor(model => model.CnnDataSource)
-                    </div>
-                    <div class="col-md-4">
-                        @Html.TextBoxFor(model => model.CnnCatalog, new { @class = "form-control", @placeholder = "Catalog" })
-                        @Html.ValidationMessageFor(model => model.CnnCatalog)
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        @Html.TextBoxFor(model => model.CnnUser, new { @class = "form-control", @placeholder = "Usuario" })
-                        @Html.ValidationMessageFor(model => model.CnnUser)
-                    </div>
-                    <div class="col-md-3">
-                        @Html.TextBoxFor(model => model.CnnPassword, new { @class = "form-control", @placeholder = "Password" })
-                        @Html.ValidationMessageFor(model => model.CnnPassword)
-                    </div>
-                    <div class="col-md-3">
-                        @Html.TextBoxFor(model => model.ConexionServidor, new { @class = "form-control", @placeholder = "Servidor" })
-                        @Html.ValidationMessageFor(model => model.ConexionServidor)
-                    </div>
-                    <div class="col-md-3">
-                        @Html.TextBoxFor(model => model.FechaDeVencimiento, "{0:dd/MM/yyyy}", new { @class = "form-control datepicker", @placeholder = "Fecha de Vencimiento" })
-                        @Html.ValidationMessageFor(model => model.FechaDeVencimiento)
-                    </div>
-                </div>
+                    <div class="widget-content">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label" for="Licencia">Licencia</label>
+                                <div class="controls">
+                                    @Html.DropDownListFor(model => model.LicenciaID, new SelectList(ViewBag.Licencias, "ID", "Serial"), new { @class = " span5" })
+                                    @Html.ValidationMessageFor(model => model.LicenciaID)
+                                </div>
+                            </div>
 
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <input type="submit" value="Guardar" class="btn btn-block btn-primary btnSubmit" />
+                            <div class="control-group">
+                                <label class="control-label" for="CnnDataSource">Data Source</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.CnnDataSource, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.CnnDataSource)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="CnnCatalog">Catalog</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.CnnCatalog, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.CnnCatalog)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="CnnUser">User</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.CnnUser, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.CnnUser)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="CnnPassword">Password</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.CnnPassword, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.CnnPassword)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="CnnServidor">Servidor</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.ConexionServidor, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.ConexionServidor)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="FechaDeVencimiento">Fecha de Vencimiento</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.FechaDeVencimiento, "{0:dd/MM/yyyy}", new { @class = "span5 datepicker" })
+                                    @Html.ValidationMessageFor(model => model.FechaDeVencimiento)
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-actions">Guardar</button>
+                                <button class="btn">Cancelar</button>
+                            </div>
+                        </fieldset>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
 

@@ -1,73 +1,66 @@
 ﻿@model IList<Gestion.Models.ClientesLicencia>
 
-<div id="clientesContactosList">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Licencias del Cliente</h3>
-                </div>
-                <div class="panel-body">
+<div id="clientesLicenciasList">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="span10 offset1">
                             <table class="table table-hover table-striped table-bordered tableIndex">
                                 <thead>
                                     <tr>
-                                        <th class="col-lg-2 centrado">
+                                        <th class="span2 centrado">
                                             @Html.DisplayNameFor(model => model.First().Licencia.Serial)
                                         </th>
-                                        <th class="col-lg-2 centrado">
+                                        <th class="span2 centrado">
                                             @Html.DisplayNameFor(model => model.First().CnnDataSource)
                                         </th>
-                                        <th class="col-lg-1 centrado">
+                                        <th class="span1 centrado">
                                             @Html.DisplayNameFor(model => model.First().CnnCatalog)
                                         </th>
-                                        <th class="col-lg-1 centrado">
+                                        <th class="span1 centrado">
                                             @Html.DisplayNameFor(model => model.First().CnnUser)
                                         </th>
-                                        <th class="col-lg-1 centrado">
+                                        <th class="span1 centrado">
                                             @Html.DisplayNameFor(model => model.First().CnnPassword)
                                         </th>
-                                        <th class="col-lg-2 centrado">
+                                        <th class="span2 centrado">
                                             @Html.DisplayNameFor(model => model.First().ConexionServidor)
                                         </th>
-                                        <th class="col-lg-1 centrado">
+                                        <th class="span1 centrado">
                                             @Html.DisplayNameFor(model => model.First().FechaDeVencimiento)
                                         </th>
-                                        <th class="col-lg-1 centrado"></th>
-                                        <th class="col-lg-1 centrado"></th>
+                                        <th class="span1 centrado"></th>
+                                        <th class="span1 centrado"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td class="col-lg-2 centrado">
+                                            <td class="span2 centrado">
                                                 @Html.DisplayFor(modelItem => item.Licencia.Serial)
                                             </td>
-                                            <td class="col-lg-2 centrado">
+                                            <td class="span2 centrado">
                                                 @Html.DisplayFor(modelItem => item.CnnDataSource)
                                             </td>
-                                            <td class="col-lg-1 centrado">
+                                            <td class="span1 centrado">
                                                 @Html.DisplayFor(modelItem => item.CnnCatalog)
                                             </td>
-                                            <td class="col-lg-1 centrado">
+                                            <td class="span1 centrado">
                                                 @Html.DisplayFor(modelItem => item.CnnUser)
                                             </td>
-                                            <td class="col-lg-1 centrado">
+                                            <td class="span1 centrado">
                                                 @Html.DisplayFor(modelItem => item.CnnPassword)
                                             </td>
-                                            <td class="col-lg-2 centrado">
+                                            <td class="span2 centrado">
                                                 @Html.DisplayFor(modelItem => item.ConexionServidor)
                                             </td>
-                                            <td class="col-lg-1 centrado">
+                                            <td class="span1 centrado">
                                                 @Html.DisplayFor(modelItem => item.FechaDeVencimiento)
                                             </td>
-                                            <td class="col-lg-1 centrado">
-                                                <a href="@item.ClienteID/ClientesLicencias/Edit/@item.ID"><span class="glyphicon glyphicon-edit azulOscuro"></span></a>
+                                            <td class="centrado">
+                                                <a href="@item.ClienteID/ClientesLicencias/Edit/@item.ID" class="btn btn-small btn-success btn-actions"><i class="btn-icon-only icon-pencil"> </i></a>
                                             </td>
-                                            <td class="col-lg-1 centrado">
-                                                <a href="@item.ClienteID/ClientesLicencias/Delete/@item.ID" class="delete" data-gestion-target="#clientesContactosList"><span class="glyphicon glyphicon-remove-circle rojo"></span></a>
+                                            <td class="centrado">
+                                                <a href="@item.ClienteID/ClientesLicencias/Delete/@item.ID" class="btn btn-small btn-success btn-actions delete" data-gestion-target="#clientesLicenciasList"><i class="btn-icon-only icon-remove"> </i></a>
                                             </td>
                                         </tr>
                                     }
@@ -77,17 +70,12 @@
 
                             <div class="row">
 
-                                <div class="col-md-4 col-md-offset-4 ">
-                                    <a href="@ViewBag.Cliente_ID/ClientesLicencias/Create" class="btn btn-block  btn-primary btnSubmit" title="Agregar Contacto">Agregar Licencia</a>
+                                <div class="span4 offset4 ">
+                                    <a href="@ViewBag.Cliente_ID/ClientesLicencias/Create" class="btn btn-block  btn-primary btnSubmit btn-actions" title="Agregar Contacto">Agregar Licencia</a>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
