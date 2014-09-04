@@ -473,6 +473,7 @@
     <Content Include="Content\template_resources\css\font-awesome-ie7.min.css" />
     <Content Include="Content\template_resources\css\font-awesome.css" />
     <Content Include="Content\template_resources\css\font-awesome.min.css" />
+    <Content Include="Content\template_resources\css\fonts.css" />
     <Content Include="Content\template_resources\css\pages\dashboard.css" />
     <Content Include="Content\template_resources\css\pages\faq.css" />
     <Content Include="Content\template_resources\css\pages\plans.css" />

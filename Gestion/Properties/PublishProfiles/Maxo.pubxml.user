@@ -38,10 +38,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/21/2014 15:25:37</publishTime>
     </File>
     <File Include="bin/Gestion.dll">
-      <publishTime>08/29/2014 11:30:44</publishTime>
+      <publishTime>09/04/2014 11:06:09</publishTime>
     </File>
     <File Include="bin/Gestion.XmlSerializers.dll">
-      <publishTime>08/29/2014 11:30:45</publishTime>
+      <publishTime>09/04/2014 11:06:10</publishTime>
     </File>
     <File Include="bin/LinqKit.dll">
       <publishTime>04/21/2014 15:25:40</publishTime>
@@ -601,6 +601,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/template_resources/css/font-awesome.min.css">
       <publishTime>08/20/2014 11:44:24</publishTime>
     </File>
+    <File Include="Content/template_resources/css/fonts.css">
+      <publishTime>09/04/2014 10:48:17</publishTime>
+    </File>
     <File Include="Content/template_resources/css/pages/dashboard.css">
       <publishTime>08/20/2014 11:44:24</publishTime>
     </File>
@@ -617,7 +620,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/20/2014 11:44:24</publishTime>
     </File>
     <File Include="Content/template_resources/css/style.css">
-      <publishTime>08/29/2014 11:12:28</publishTime>
+      <publishTime>09/04/2014 11:03:44</publishTime>
     </File>
     <File Include="Content/template_resources/font/fontawesome-webfont.eot">
       <publishTime>08/20/2014 11:44:23</publishTime>
@@ -1790,10 +1793,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/13/2014 15:35:38</publishTime>
     </File>
     <File Include="Views/Shared/_TemplateGestion.cshtml">
-      <publishTime>08/27/2014 09:52:57</publishTime>
+      <publishTime>09/04/2014 11:05:10</publishTime>
     </File>
     <File Include="Views/Shared/_TemplateGestion_Login.cshtml">
-      <publishTime>09/01/2014 11:26:34</publishTime>
+      <publishTime>09/04/2014 11:05:04</publishTime>
     </File>
     <File Include="Views/Shared/_TemplatePrincipal.cshtml">
       <publishTime>08/22/2014 09:49:30</publishTime>
@@ -1871,7 +1874,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/21/2014 12:57:01</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/01/2014 11:26:48</publishTime>
+      <publishTime>09/04/2014 11:06:14</publishTime>
     </File>
   </ItemGroup>
 </Project>
