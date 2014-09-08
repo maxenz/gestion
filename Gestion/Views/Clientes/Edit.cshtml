@@ -46,7 +46,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane fade in active" id="datosGrales">
                                         @Html.Partial("_Form", Model)
-                                        @*@Html.Partial("_BottomForm", Model)*@
+                                        @Html.Partial("_BottomForm", Model)
                                     </div>
                                     <div class="tab-pane fade" id="contactos">
                                         @Html.Action("Index", "ClientesContactos", routeValues: new { ClienteID = Model.ID })
