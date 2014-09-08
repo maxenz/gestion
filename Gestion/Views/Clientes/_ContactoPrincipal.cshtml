@@ -1,24 +1,37 @@
 ﻿@model Gestion.Models.Cliente
 
-<div class="row show-grid">
-    <div class="col-md-6">
-        @Html.TextBoxFor(model => model.Referencia, new { @class = "form-control", @placeholder = "Referencia" })
+<div class="control-group">
+    <label class="control-label" for="Referencia">Referencia</label>
+    <div class="controls">
+        @Html.TextBoxFor(model => model.Referencia, new { @class = "span5" })
         @Html.ValidationMessageFor(model => model.Referencia)
     </div>
-    <div class="col-md-6">
-        @Html.TextBoxFor(model => model.ClientesContactos[0].Nombre, new { @class = "form-control", @placeholder = "Nombre" })
-        @Html.ValidationMessageFor((model => model.ClientesContactos[0].Nombre))
-    </div>
+    <!-- /controls -->
 </div>
 
-<div class="row show-grid">
-    <div class="col-md-6">
-        @Html.TextBoxFor(model => model.ClientesContactos[0].Email, new { @class = "form-control", @placeholder = "Email" })
-        @Html.ValidationMessageFor((model => model.ClientesContactos[0].Email))
+<div class="control-group">
+    <label class="control-label" for="Nombre">Nombre</label>
+    <div class="controls">
+        @Html.TextBoxFor(model => model.ClientesContactos[0].Nombre, new { @class = "span5" })
+        @Html.ValidationMessageFor(model => model.ClientesContactos[0].Nombre)
     </div>
-    <div class="col-md-6">
-        @Html.TextBoxFor(model => model.ClientesContactos[0].Telefono, new { @class = "form-control", @placeholder = "Telefono" })
-        @Html.ValidationMessageFor((model => model.ClientesContactos[0].Telefono))
-    </div>
+    <!-- /controls -->
+</div>
 
+<div class="control-group">
+    <label class="control-label" for="Email">Email</label>
+    <div class="controls">
+        @Html.TextBoxFor(model => model.ClientesContactos[0].Email, new { @class = "span5" })
+        @Html.ValidationMessageFor(model => model.ClientesContactos[0].Email)
+    </div>
+    <!-- /controls -->
+</div>
+
+<div class="control-group">
+    <label class="control-label" for="Telefono">Tel&eacute;fono</label>
+    <div class="controls">
+        @Html.TextBoxFor(model => model.ClientesContactos[0].Telefono, new { @class = "span5" })
+        @Html.ValidationMessageFor(model => model.ClientesContactos[0].Telefono)
+    </div>
+    <!-- /controls -->
 </div>

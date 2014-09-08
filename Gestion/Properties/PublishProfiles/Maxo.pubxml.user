@@ -1388,7 +1388,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/27/2014 09:52:57</publishTime>
     </File>
     <File Include="Views/Clientes/Create.cshtml">
-      <publishTime>12/16/2013 15:33:49</publishTime>
+      <publishTime>09/05/2014 15:29:17</publishTime>
     </File>
     <File Include="Views/Clientes/Edit.cshtml">
       <publishTime>08/27/2014 16:30:03</publishTime>
@@ -1406,10 +1406,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2014 15:54:55</publishTime>
     </File>
     <File Include="Views/Clientes/_ContactoPrincipal.cshtml">
-      <publishTime>12/16/2013 15:45:12</publishTime>
+      <publishTime>09/05/2014 15:27:29</publishTime>
     </File>
     <File Include="Views/Clientes/_Form.cshtml">
-      <publishTime>08/27/2014 16:56:55</publishTime>
+      <publishTime>09/05/2014 15:29:36</publishTime>
     </File>
     <File Include="Views/Clientes/_Guardar.cshtml">
       <publishTime>12/02/2013 14:45:03</publishTime>
@@ -1874,7 +1874,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/21/2014 12:57:01</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/04/2014 11:06:14</publishTime>
+      <publishTime>09/05/2014 15:30:29</publishTime>
     </File>
   </ItemGroup>
 </Project>

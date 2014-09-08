@@ -130,21 +130,22 @@
                                 <!-- /controls -->
                             </div>
                             <!-- /control-group -->
+                            @if ((Model != null))
+                            {
+                                if (Model.Latitud != null)
+                                {
+                                <div class="control-group">
+                                    <label class="control-label" for="Piso">Ubicaci&oacute;n en el mapa</label>
+                                    <div class="controls">
 
-                            <div class="control-group">
-                                <label class="control-label" for="Piso">Ubicaci&oacute;n en el mapa</label>
-                                <div class="controls">
-                                    @if ((Model != null))
-                                    {
-                                        if (Model.Latitud != null)
-                                        {
                                         <a href="@latlng" class="btn btn-primary various fancybox.iframe btn-actions"><i class="icon-globe"></i>Ver Ubicación</a>
-                                        }
-                                    }
+
+                                    </div>
+                                    <!-- /controls -->
                                 </div>
-                                <!-- /controls -->
-                            </div>
-                            <!-- /control-group -->
+                                <!-- /control-group -->
+                                }
+                            }
 
                             <div class="control-group">
                                 <label class="control-label" for="MedioDifusionID">Medio de Difusi&oacute;n</label>
@@ -155,19 +156,3 @@
                                 <!-- /controls -->
                             </div>
                             <!-- /control-group -->
-
-                            <br>
-
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary btn-actions">Guardar</button>
-                                <button class="btn">Cancelar</button>
-                            </div>
-                            <!-- /form-actions -->
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /container -->
-</div>

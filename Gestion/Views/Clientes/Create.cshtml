@@ -1,15 +1,12 @@
 ﻿@model Gestion.Models.Cliente
 
-@Html.Partial("_Header",Model)
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     @Html.Partial("_Form",Model)
-
     @Html.Partial("_ContactoPrincipal",Model)
-
     @Html.Partial("_BottomForm")
    
 }
