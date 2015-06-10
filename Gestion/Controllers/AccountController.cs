@@ -103,7 +103,7 @@ namespace Gestion.Controllers
                  {
                      retV = 1;
                      string newPassword = GeneratePassword();
-                     string loginShaman = "http://paramedicapps.com.ar:57771/Account/Login";
+                     string loginShaman = "http://200.49.156.125:57771/Account/Login";
                      var token = WebSecurity.GeneratePasswordResetToken(userName);
                      WebSecurity.ResetPassword(token, newPassword);
                      string msgMail = String.Format("Estimado/a: Su nuevo password para ingresar a Shaman Gestión es {1}.{0}" +

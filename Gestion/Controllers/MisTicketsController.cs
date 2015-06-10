@@ -189,7 +189,7 @@ namespace Gestion.Controllers
 
         private string createBodyForCliente(TicketEvento tkEvento)
         {
-            string href = "<a href=\"http://www.paramedicapps.com.ar:57771/MisTickets/Edit/" + tkEvento.TicketID + "\">Aquí</a>";
+            string href = "<a href=\"http://www.200.49.156.125:57771/MisTickets/Edit/" + tkEvento.TicketID + "\">Aquí</a>";
             StringBuilder body = new StringBuilder()
                 .AppendLine("Asunto: " + tkEvento.Ticket.Asunto + "<br /><br />")
                 .AppendLine("Para acceder a la respuesta haga click:  " + href);

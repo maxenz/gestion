@@ -13,6 +13,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>10/18/2013 14:13:42</publishTime>
     </File>
+    <File Include="bin/Content/font-awesome/font/fontawesome-webfont.eot">
+      <publishTime>10/21/2013 09:48:34</publishTime>
+    </File>
+    <File Include="bin/Content/font-awesome/font/fontawesome-webfont.svg">
+      <publishTime>10/21/2013 09:48:34</publishTime>
+    </File>
+    <File Include="bin/Content/font-awesome/font/fontawesome-webfont.ttf">
+      <publishTime>10/21/2013 09:48:34</publishTime>
+    </File>
+    <File Include="bin/Content/font-awesome/font/fontawesome-webfont.woff">
+      <publishTime>10/21/2013 09:48:34</publishTime>
+    </File>
+    <File Include="bin/Content/font-awesome/font/FontAwesome.otf">
+      <publishTime>10/21/2013 09:48:34</publishTime>
+    </File>
     <File Include="bin/DotNetOpenAuth.AspNet.dll">
       <publishTime>10/18/2013 12:05:32</publishTime>
     </File>
@@ -37,11 +52,32 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>04/21/2014 15:25:37</publishTime>
     </File>
+    <File Include="bin/font/fontawesome-webfont.eot">
+      <publishTime>08/29/2014 11:29:56</publishTime>
+    </File>
+    <File Include="bin/font/fontawesome-webfont.svg">
+      <publishTime>08/29/2014 11:29:56</publishTime>
+    </File>
+    <File Include="bin/font/fontawesome-webfont.svgz">
+      <publishTime>08/29/2014 11:29:56</publishTime>
+    </File>
+    <File Include="bin/font/fontawesome-webfont.ttf">
+      <publishTime>08/29/2014 11:29:56</publishTime>
+    </File>
+    <File Include="bin/font/fontawesome-webfont.woff">
+      <publishTime>08/29/2014 11:29:56</publishTime>
+    </File>
+    <File Include="bin/font/fontawesome-webfontd41d.eot">
+      <publishTime>08/29/2014 11:29:56</publishTime>
+    </File>
+    <File Include="bin/font/FontAwesome.otf">
+      <publishTime>08/29/2014 11:29:56</publishTime>
+    </File>
     <File Include="bin/Gestion.dll">
-      <publishTime>09/04/2014 11:06:09</publishTime>
+      <publishTime>02/26/2015 20:36:38</publishTime>
     </File>
     <File Include="bin/Gestion.XmlSerializers.dll">
-      <publishTime>09/04/2014 11:06:10</publishTime>
+      <publishTime>02/26/2015 20:36:39</publishTime>
     </File>
     <File Include="bin/LinqKit.dll">
       <publishTime>04/21/2014 15:25:40</publishTime>
@@ -1388,16 +1424,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/27/2014 09:52:57</publishTime>
     </File>
     <File Include="Views/Clientes/Create.cshtml">
-      <publishTime>09/05/2014 15:29:17</publishTime>
+      <publishTime>09/05/2014 16:47:55</publishTime>
     </File>
     <File Include="Views/Clientes/Edit.cshtml">
-      <publishTime>08/27/2014 16:30:03</publishTime>
+      <publishTime>09/07/2014 21:17:09</publishTime>
     </File>
     <File Include="Views/Clientes/Index.cshtml">
       <publishTime>08/27/2014 16:18:06</publishTime>
     </File>
     <File Include="Views/Clientes/_BottomForm.cshtml">
-      <publishTime>12/16/2013 15:27:47</publishTime>
+      <publishTime>09/05/2014 16:40:44</publishTime>
     </File>
     <File Include="Views/Clientes/_Clientes.cshtml">
       <publishTime>08/29/2014 15:03:45</publishTime>
@@ -1406,10 +1442,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2014 15:54:55</publishTime>
     </File>
     <File Include="Views/Clientes/_ContactoPrincipal.cshtml">
-      <publishTime>09/05/2014 15:27:29</publishTime>
+      <publishTime>09/05/2014 16:41:37</publishTime>
     </File>
     <File Include="Views/Clientes/_Form.cshtml">
-      <publishTime>09/05/2014 15:29:36</publishTime>
+      <publishTime>09/05/2014 16:41:54</publishTime>
     </File>
     <File Include="Views/Clientes/_Guardar.cshtml">
       <publishTime>12/02/2013 14:45:03</publishTime>
@@ -1625,7 +1661,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/27/2014 09:52:57</publishTime>
     </File>
     <File Include="Views/MisProductos/Index.cshtml">
-      <publishTime>08/29/2014 11:12:29</publishTime>
+      <publishTime>11/06/2014 14:59:28</publishTime>
     </File>
     <File Include="Views/MisProductos/_NoProductos.cshtml">
       <publishTime>03/13/2014 11:55:37</publishTime>
@@ -1793,7 +1829,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/13/2014 15:35:38</publishTime>
     </File>
     <File Include="Views/Shared/_TemplateGestion.cshtml">
-      <publishTime>09/04/2014 11:05:10</publishTime>
+      <publishTime>02/08/2015 21:36:55</publishTime>
     </File>
     <File Include="Views/Shared/_TemplateGestion_Login.cshtml">
       <publishTime>09/04/2014 11:05:04</publishTime>
@@ -1847,7 +1883,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/27/2014 09:52:57</publishTime>
     </File>
     <File Include="Views/Videos/Index.cshtml">
-      <publishTime>08/25/2014 12:54:17</publishTime>
+      <publishTime>11/06/2014 15:08:06</publishTime>
     </File>
     <File Include="Views/Videos/_Form.cshtml">
       <publishTime>08/27/2014 09:52:57</publishTime>
@@ -1874,7 +1910,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/21/2014 12:57:01</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/05/2014 15:30:29</publishTime>
+      <publishTime>02/26/2015 20:40:00</publishTime>
     </File>
   </ItemGroup>
 </Project>

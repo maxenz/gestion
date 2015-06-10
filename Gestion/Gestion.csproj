@@ -433,7 +433,9 @@
     <Content Include="Content\font-awesome\css\font-awesome-ie7.min.css" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
-    <Content Include="Content\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="Content\font-awesome\font\fontawesome-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\fonts\Flat-UI-Icons.dev.svg" />
     <Content Include="Content\fonts\Flat-UI-Icons.svg" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
@@ -494,16 +496,28 @@
     <Content Include="Content\template_resources\img\signin\twitter_btn.png" />
     <Content Include="Content\template_resources\img\signin\user.png" />
     <Content Include="favicon.ico" />
-    <Content Include="font\fontawesome-webfont.svg" />
-    <Content Include="font\fontawesome-webfont.svgz" />
+    <Content Include="font\fontawesome-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="font\fontawesome-webfont.svgz">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\font-awesome\font\fontawesome-webfont.eot" />
-    <Content Include="Content\font-awesome\font\fontawesome-webfont.ttf" />
-    <Content Include="Content\font-awesome\font\fontawesome-webfont.woff" />
-    <Content Include="Content\font-awesome\font\FontAwesome.otf" />
+    <Content Include="Content\font-awesome\font\fontawesome-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\font-awesome\font\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\font-awesome\font\fontawesome-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\font-awesome\font\FontAwesome.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\font-awesome\less\bootstrap.less" />
     <Content Include="Content\font-awesome\less\core.less" />
     <Content Include="Content\font-awesome\less\extras.less" />
@@ -595,11 +609,21 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfontd41d.eot" />
     <Content Include="Content\fonts\FontAwesome.otf" />
-    <Content Include="font\fontawesome-webfont.eot" />
-    <Content Include="font\fontawesome-webfont.ttf" />
-    <Content Include="font\fontawesome-webfont.woff" />
-    <Content Include="font\fontawesome-webfontd41d.eot" />
-    <Content Include="font\FontAwesome.otf" />
+    <Content Include="font\fontawesome-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="font\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="font\fontawesome-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="font\fontawesome-webfontd41d.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="font\FontAwesome.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\Maxo.pubxml" />
     <Content Include="img\body-bg.png" />
     <Content Include="img\glyphicons-halflings-white.html" />

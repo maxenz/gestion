@@ -18,6 +18,7 @@ namespace Gestion
         protected void Application_Start()
         {
             WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+            //WebSecurity.InitializeDatabaseConnection("200.49.156.125" + Convert.ToChar(92) + "SQLEXPRESS", "Gestion", "dbaadmin", "yeike", autoCreateTables: true);
 
             AreaRegistration.RegisterAllAreas();
 

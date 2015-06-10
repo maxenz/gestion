@@ -59,8 +59,12 @@ namespace Gestion
             ));
 
             bundles.Add(new StyleBundle("~/bundles/signin_css").Include(
-                    "~/Content/template_resources/css/pages/signin.css"   
+                    "~/Content/template_resources/css/pages/signin.css"  
             ));
+
+            bundles.Add(new ScriptBundle("~/bundles/mapa").Include(
+                        "~/Scripts/sbadmin/map.js"
+                        ));
                              
             bundles.Add(new StyleBundle("~/bundles/AdminCss").Include(
                    "~/Content/sbadmin/bootstrap.css",
