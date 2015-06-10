@@ -20,7 +20,7 @@ namespace Gestion.Models
         [Display(Name = "Fecha del Evento")]
         public DateTime FechaCreacion { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = @"Debe ingresar la descripcion.")]
         [Display(Name = "Descripción")]
         public String Descripcion { get; set; }
 

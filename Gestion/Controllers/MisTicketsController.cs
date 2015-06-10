@@ -122,12 +122,12 @@ namespace Gestion.Controllers
             return View();
         }
 
-        private TicketEvento doTicketEvento(int ID, string descripcion, int tipoEvento, HttpPostedFileBase image)
+        private TicketEvento doTicketEvento(Ticket ticket, string descripcion, int tipoEvento, HttpPostedFileBase image)
         {
             TicketEvento tkEvento = new TicketEvento();
-            tkEvento.Descripcion = descripcion;
+            tkEvento.Descripcion = descripcion == "" ? ticket.Asunto : descripcion;
             tkEvento.FechaCreacion = DateTime.Now;
-            tkEvento.TicketID = ID;
+            tkEvento.TicketID = ticket.ID;
             tkEvento.UserID = GetCurrentUserID();
             tkEvento.TicketTipoEventoID = tipoEvento;
 
@@ -159,10 +159,9 @@ namespace Gestion.Controllers
         [HttpPost]
         public ActionResult CreateTicketEvento(int id, string descripcion, int tipoEvento, HttpPostedFileBase image)
         {
-
-            TicketEvento tkEvento = doTicketEvento(id, descripcion, tipoEvento, image);
-
             Ticket ticket = db.Tickets.Find(id);
+
+            TicketEvento tkEvento = doTicketEvento(ticket, descripcion, tipoEvento, image);
 
             if (tipoEvento == 2)
             {
@@ -239,7 +238,7 @@ namespace Gestion.Controllers
 
             TicketEvento tkEvento = db.TicketEventos.Find(ID);
             setImageTicketEvento(tkEvento, image);
-            tkEvento.Descripcion = descripcion;
+            tkEvento.Descripcion = descripcion == "" ? tkEvento.Descripcion : descripcion;
             tkEvento.UserID = GetCurrentUserID();
             tkEvento.FechaCreacion = DateTime.Now;
             db.Entry(tkEvento).State = EntityState.Modified;
@@ -279,7 +278,7 @@ namespace Gestion.Controllers
                 db.Tickets.Add(ticket);
                 db.SaveChanges();
 
-                TicketEvento tkEvento = doTicketEvento(ticket.ID, Descripcion, 1, image);
+                TicketEvento tkEvento = doTicketEvento(ticket, Descripcion, 1, image);
 
                 doEmailAdministrator(tkEvento);
 
