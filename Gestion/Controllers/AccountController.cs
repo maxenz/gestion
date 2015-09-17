@@ -63,17 +63,25 @@ namespace Gestion.Controllers
                                             Email = user.Email
                                         };
 
-             var roles = Roles.FindUsersInRole("Administrador", user.UserName);
-             if (roles.Length.Equals(0))
+             if (HasRole("Cliente",user.UserName))
              {
                  setRoles("Cliente");
              }
-             else
+             else if (HasRole("Administrador",user.UserName))
              {
                  setRoles("Administrador");
              }
+             else
+             {
+                 setRoles("Cliente ticket");
+             }
                       
              return View(regModel);
+         }
+
+         private bool HasRole(string role, string userName)
+         {
+             return Roles.FindUsersInRole(role, userName).Length > 0;
          }
 
          private string GeneratePassword()
@@ -162,22 +170,30 @@ namespace Gestion.Controllers
                  db.SaveChanges();
 
                  var rol = Roles.FindUsersInRole( "Administrador",model.UserName);
-                 if (rol.Length.Equals(0))
+                 if (HasRole("Administrador",model.UserName))
+                 {
+                     Roles.RemoveUserFromRole(model.UserName, "Administrador");
+                 }
+                 else if (HasRole("Cliente", model.UserName))
                  {
                      Roles.RemoveUserFromRole(model.UserName, "Cliente");
                  }
                  else
                  {
-                     Roles.RemoveUserFromRole(model.UserName, "Administrador");
+                     Roles.RemoveUserFromRole(model.UserName, "Cliente ticket");
                  }
                                
                  if (selectedRole == "Administrador")
                  {
                      Roles.AddUserToRole(model.UserName, "Administrador");
                  }
-                 else
+                 else if (selectedRole == "Cliente")
                  {
                      Roles.AddUserToRole(model.UserName, "Cliente");
+                 }
+                 else
+                 {
+                     Roles.AddUserToRole(model.UserName, "Cliente ticket");
                  }
 
 
@@ -239,7 +255,7 @@ namespace Gestion.Controllers
 
         private void setRoles(string selValue)
         {
-            var rolesCollection = new List<string> { "Administrador", "Cliente" };
+            var rolesCollection = new List<string> { "Administrador", "Cliente", "Cliente ticket" };
             ViewBag.Roles = new SelectList(rolesCollection, selValue);
         }
 
@@ -519,13 +535,17 @@ namespace Gestion.Controllers
             var userName = usr.UserName;
             var rolAsignado = Roles.FindUsersInRole("Administrador", userName);
 
-            if (rolAsignado.Length.Equals(0))
+            if (HasRole("Administrador",userName))
+            {
+                Roles.RemoveUserFromRole(userName, "Administrador");
+            }
+            else if (HasRole("Cliente",userName))
             {
                 Roles.RemoveUserFromRole(userName, "Cliente");
             }
             else
             {
-                Roles.RemoveUserFromRole(userName, "Administrador");
+                Roles.RemoveUserFromRole(userName, "Cliente ticket");
             }
 
             ((SimpleMembershipProvider)Membership.Provider).DeleteAccount(userName); // deletes record from webpages_Membership table

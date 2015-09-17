@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Gestion.Controllers
 {
-    [Authorize(Roles = "Cliente,Administrador")]
+    [Authorize]
     public class MisProductosController : Controller
     {
         private GestionDb db = new GestionDb();

@@ -33,6 +33,8 @@ namespace Gestion.Models
         [ForeignKey("TicketEstado")]
         public int TicketEstadoID { get; set; }
 
+        [Display(Name="Futura mejora")]
+        public bool FuturaMejora { get; set; }
 
         public virtual IList<TicketEvento> TicketEventos { get; set; }
         public virtual UserProfile Usuario { get; set; }

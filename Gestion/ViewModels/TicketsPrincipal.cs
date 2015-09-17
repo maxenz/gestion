@@ -17,6 +17,7 @@ namespace Gestion.ViewModels
         public String Usuario { get; set; }
         public String Cliente { get; set; }
         public int ClienteID { get; set; }
+        public bool FuturaMejora { get; set; }
        
     }
 }

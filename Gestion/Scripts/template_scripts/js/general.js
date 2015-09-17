@@ -366,7 +366,7 @@ $(function () {
                 }
             },
             error: function (error) {
-                alert(error.responseText);
+                console.log(error.responseText);
             }
         });
 
@@ -453,7 +453,7 @@ $(function () {
     verifPrivacidadVideo();
     $('#esPublico').on('click', verifPrivacidadVideo);
 
-    validarLocalidad();
+    //validarLocalidad();
     setFormatTables();
 
     $(".various").on('click', function () {
@@ -667,6 +667,28 @@ $(function () {
             infowindow.open(map, marker);
         });
     }
+
+    $('#FuturaMejora').click(function () {
+        blockInterface();
+        $.ajax({
+            url: '/MisTickets/SetFutureFeature',
+            datatype: "json",
+            traditional: true,
+            data: {
+                'isFutureFeature': $(this).is(":checked"),
+                'ticketId' : $('#ID').val()
+            },
+            type: 'POST',
+            success: function (data) {
+                console.log(data);
+                $.unblockUI();
+            },
+            error: function (error) {
+                alert(error.statusText);
+                $.unblockUI();
+            }
+        });
+    });
 
 });
 

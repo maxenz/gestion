@@ -35,7 +35,7 @@ namespace Gestion.Controllers
 
         }
 
-        public ActionResult Index(string searchName = null, int page = 1)
+        public ActionResult Index(string searchName = null,string chkFutureFeatures = null, int page = 1)
         {
             int userID = GetCurrentUserID();
 
@@ -77,7 +77,8 @@ namespace Gestion.Controllers
                     Estado = estado,
                     Usuario = ticket.Usuario.UserName,
                     Cliente = cli.RazonSocial,
-                    ClienteID = cli.ID
+                    ClienteID = cli.ID,
+                    FuturaMejora = ticket.FuturaMejora
                 });
             }
 
@@ -87,6 +88,11 @@ namespace Gestion.Controllers
                 qTickets = qTickets.Where(p => p.Asunto.ToUpper().Contains(searchName.ToUpper()) ||
                                     p.Estado.ToUpper().Contains(searchName.ToUpper()))
                                     .ToList();
+            }
+
+            if (!String.IsNullOrEmpty(chkFutureFeatures))
+            {
+                qTickets = qTickets.Where(x => x.FuturaMejora).ToList();
             }
 
             qTickets = qTickets.OrderBy(p => p.Estado).ThenByDescending(p => p.FechaHora).ToList();
@@ -425,6 +431,16 @@ namespace Gestion.Controllers
             db.Tickets.Remove(ticket);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult SetFutureFeature(bool isFutureFeature, int ticketId)
+        {
+            Ticket ticket = db.Tickets.Find(ticketId);
+            ticket.FuturaMejora = isFutureFeature;
+            db.Entry(ticket).State = EntityState.Modified;
+            db.SaveChanges();
+            return new HttpStatusCodeResult(200);
         }
 
         protected override void Dispose(bool disposing)

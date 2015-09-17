@@ -300,6 +300,8 @@ div.modalTickets > .modal-dialog {
     width:100%;
 }
 
-
+.labelInline {
+    display:inline;
+}
 
 /****************************/

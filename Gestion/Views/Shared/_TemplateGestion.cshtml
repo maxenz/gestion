@@ -87,14 +87,21 @@
                         @HtmlHelpers.getPageLink("/Mapa", "icon-globe", "Mapa")
 
                     }
-                    else
+                    else if (User.IsInRole("Cliente"))
                     {
                         @HtmlHelpers.getPageLink("/MisTickets", "icon-comment", "Consultas")
                         @HtmlHelpers.getPageLink("/Videos", "icon-facetime-video", "Videos")
                         @HtmlHelpers.getPageLink("/CuentaCorriente", "icon-money", "Cuenta Corriente")
                         @HtmlHelpers.getPageLink("/MisProductos", "icon-money", "Mis Productos")
                     }
+                    else
+                    {
+                        @HtmlHelpers.getPageLink("/MisTickets", "icon-comment", "Consultas")
+                        @HtmlHelpers.getPageLink("/Videos", "icon-facetime-video", "Videos")
+                        @HtmlHelpers.getPageLink("/MisProductos", "icon-money", "Mis Productos")
+                    }
                 </ul>
+
             </div>
             <!-- /container -->
         </div>

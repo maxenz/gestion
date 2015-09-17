@@ -104,7 +104,7 @@ namespace Gestion.Controllers
 
         //
         // GET: /Videos/Create
-
+        [Authorize(Roles="Administrador")]
         public ActionResult Create()
         {
             getClientes();
@@ -113,7 +113,7 @@ namespace Gestion.Controllers
 
         //
         // POST: /Videos/Create
-
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public ActionResult Create(Video video, string vidCliente)
         {
@@ -152,7 +152,7 @@ namespace Gestion.Controllers
 
         //
         // GET: /Videos/Edit/5
-        
+        [Authorize(Roles = "Administrador")]
         public ActionResult Edit(int id = 0)
         {
             Video video = db.Videos.Find(id);
@@ -172,7 +172,7 @@ namespace Gestion.Controllers
 
         //
         // POST: /Videos/Edit/5
-
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public ActionResult Edit(Video video, string vidCliente)
         {
@@ -246,7 +246,7 @@ namespace Gestion.Controllers
 
         //
         // GET: /Videos/Delete/5
-
+        [Authorize(Roles = "Administrador")]
         public ActionResult Delete(int id = 0)
         {
             Video video = db.Videos.Find(id);
@@ -259,7 +259,7 @@ namespace Gestion.Controllers
 
         //
         // POST: /Videos/Delete/5
-
+        [Authorize(Roles = "Administrador")]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {

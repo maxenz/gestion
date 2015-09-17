@@ -8,8 +8,15 @@
                 <div class="span8 offset2">
                     <div class="widget">
                         <div class="widget-header">
+
                             <i class="icon-remove-circle"></i>
                             <h3>@Model.Asunto</h3>
+                            @if (@User.IsInRole("Administrador")) {
+                                @Html.LabelFor(x => x.FuturaMejora, new { style = "display: inline; margin-left:60%; margin-right:5px" })
+                                @Html.EditorFor(x => x.FuturaMejora)
+                                @Html.HiddenFor(x => x.ID)
+                            }
+
                         </div>
                         <!-- /widget-header -->
                         <div class="widget-content">
