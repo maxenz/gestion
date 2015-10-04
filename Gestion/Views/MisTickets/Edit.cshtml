@@ -11,16 +11,19 @@
 
                             <i class="icon-remove-circle"></i>
                             <h3>@Model.Asunto</h3>
-                            @if (@User.IsInRole("Administrador")) {
-                                @Html.LabelFor(x => x.FuturaMejora, new { style = "display: inline; margin-left:60%; margin-right:5px" })
-                                @Html.EditorFor(x => x.FuturaMejora)
-                                @Html.HiddenFor(x => x.ID)
-                            }
 
                         </div>
                         <!-- /widget-header -->
                         <div class="widget-content">
-
+                            <div style="text-align:right">
+                                @if (@User.IsInRole("Administrador"))
+                                {
+                                    @Html.LabelFor(x => x.FuturaMejora, new { style = "display: inline; margin-right:5px" })
+                                    @Html.EditorFor(x => x.FuturaMejora)
+                                    @Html.HiddenFor(x => x.ID)
+                                }
+                                <hr />
+                            </div>
                             @Html.Partial("_ListaEventos", Model)
 
                             <!-- /bar-chart -->
