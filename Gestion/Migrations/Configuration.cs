@@ -11,17 +11,18 @@ namespace Gestion.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Gestion.Models.GestionDb context)
         {
-            //WebSecurity.InitializeDatabaseConnection("DefaultConnection",
-            //   "UserProfile", "UserId", "UserName", autoCreateTables: true);
-            //var roles = (SimpleRoleProvider)Roles.Provider;
-            //var membership = (SimpleMembershipProvider)Membership.Provider;
-            //membership.CreateUserAndAccount("mpoggio", "elmaxo");
-            //roles.AddUsersToRoles(new[] { "mpoggio" }, new[] { "Administrador" });
+            WebSecurity.InitializeDatabaseConnection("DefaultConnection",
+               "UserProfile", "UserId", "UserName", autoCreateTables: true);
+            var roles = (SimpleRoleProvider)Roles.Provider;
+            var membership = (SimpleMembershipProvider)Membership.Provider;
+            membership.CreateUserAndAccount("mpoggio", "elmaxo");
+            roles.CreateRole("Administrador");
+            roles.AddUsersToRoles(new[] { "mpoggio" }, new[] { "Administrador" });
 
             //  This method will be called after migrating to the latest version.
 

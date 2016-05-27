@@ -26,7 +26,7 @@ namespace Gestion.Models
         public bool Resuelto { get; set; }
 
         [Required]
-        [ForeignKey("Usuario")]
+        //[ForeignKey("Usuario")]
         public int UsuarioID { get; set; }
 
         [Required]

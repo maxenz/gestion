@@ -12,7 +12,7 @@ namespace Gestion.Models
         public GestionDb()
             : base("name = DefaultConnection")
         {
-            Database.SetInitializer<GestionDb>(null);
+            Database.SetInitializer<GestionDb>(new CreateDatabaseIfNotExists<GestionDb>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
