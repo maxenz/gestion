@@ -237,6 +237,7 @@
     <Compile Include="Controllers\ProvinciasController.cs" />
     <Compile Include="Controllers\RecontactosController.cs" />
     <Compile Include="Controllers\RevendedoresController.cs" />
+    <Compile Include="Controllers\SitiosController.cs" />
     <Compile Include="Controllers\TipoTerminalesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\VideosController.cs" />
@@ -244,6 +245,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\HtmlHelpers.cs" />
+    <Compile Include="Migrations\201605272027350_Sitios.cs" />
+    <Compile Include="Migrations\201605272027350_Sitios.Designer.cs">
+      <DependentUpon>201605272027350_Sitios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -266,6 +271,7 @@
     <Compile Include="Models\ProductosModulo.cs" />
     <Compile Include="Models\Provincia.cs" />
     <Compile Include="Models\Revendedor.cs" />
+    <Compile Include="Models\Sitio.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TicketEstado.cs" />
     <Compile Include="Models\TicketEvento.cs" />
@@ -828,6 +834,12 @@
     <Content Include="Views\Shared\_TemplateGestion.cshtml" />
     <Content Include="Views\Shared\_TemplateGestion_Login.cshtml" />
     <Content Include="Views\Videos\_VideosContainer.cshtml" />
+    <Content Include="Views\Sitios\_Form.cshtml" />
+    <Content Include="Views\Sitios\_Header.cshtml" />
+    <Content Include="Views\Sitios\_Sitios.cshtml" />
+    <Content Include="Views\Sitios\Create.cshtml" />
+    <Content Include="Views\Sitios\Edit.cshtml" />
+    <Content Include="Views\Sitios\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -861,6 +873,11 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Gestion_wsCuentaCorriente_ClientesDocumentos</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605272027350_Sitios.resx">
+      <DependentUpon>201605272027350_Sitios.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

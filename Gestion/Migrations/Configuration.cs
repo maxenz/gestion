@@ -18,11 +18,15 @@ namespace Gestion.Migrations
         {
             WebSecurity.InitializeDatabaseConnection("DefaultConnection",
                "UserProfile", "UserId", "UserName", autoCreateTables: true);
-            var roles = (SimpleRoleProvider)Roles.Provider;
-            var membership = (SimpleMembershipProvider)Membership.Provider;
-            membership.CreateUserAndAccount("mpoggio", "elmaxo");
-            roles.CreateRole("Administrador");
-            roles.AddUsersToRoles(new[] { "mpoggio" }, new[] { "Administrador" });
+            if (!WebSecurity.UserExists("mpoggio"))
+            {
+                var roles = (SimpleRoleProvider)Roles.Provider;
+                var membership = (SimpleMembershipProvider)Membership.Provider;
+                membership.CreateUserAndAccount("mpoggio", "elmaxo");
+                roles.CreateRole("Administrador");
+                roles.AddUsersToRoles(new[] { "mpoggio" }, new[] { "Administrador" });
+            }
+
 
             //  This method will be called after migrating to the latest version.
 

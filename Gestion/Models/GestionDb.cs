@@ -90,5 +90,7 @@ namespace Gestion.Models
 
         public DbSet<LogRegistroSistema> LogsRegistroSistema { get; set; }
 
+        public DbSet<Sitio> Sitios { get; set; }
+
     }
 }
