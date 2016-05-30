@@ -31,9 +31,10 @@ namespace Gestion.Controllers
                 else
                 {
                     Cliente cli = db.Clientes.Find(ClienteID);
-                    if (setProductos(cli))
+                    var productos = setProductos(cli);
+                    if (productos != null)
                     {
-                        return PartialView("Index");
+                        return PartialView("Index", productos);
                     }
                     else
                     {
@@ -52,10 +53,11 @@ namespace Gestion.Controllers
                 getUserForShamanWeb(1, cliUsr);
 
                 Cliente cliente = cliUsr.Cliente;
+                var productos = setProductos(cliente);
 
-                if (setProductos(cliente))
+                if (productos != null)
                 {
-                    return View("Index");
+                    return View("Index",productos);
                 }
                 else
                 {
@@ -125,36 +127,17 @@ namespace Gestion.Controllers
 
         }
 
-        private bool setProductos(Cliente cliente)
+        private IList<ClientesLicenciasProducto> setProductos(Cliente cliente)
         {
             var cliLic = db.Clientes.Find(cliente.ID).ClientesLicencias.FirstOrDefault();
             if (cliLic == null)
             {
-                return false;
+                return null;
             }
             else
             {
-                var prod = cliLic.ClientesLicenciasProductos.ToList();
-                if (prod == null)
-                {
-                    return false;
-                }
-                else
-                {
-                    foreach (var x in prod)
-                    {
-                        if (x.Producto.Descripcion == "Shaman Express")
-                        {
-                            ViewBag.Express = 1;
-                        }
-                        else if (x.Producto.Descripcion == "Shaman Full")
-                        {
-                            ViewBag.Full = 1;
-                        }
-                    }
-
-                    return true;
-                }
+                // HARCODEADO A PEDIDO DE JAVI. 30/05/2016
+                return cliLic.ClientesLicenciasProductos.Where(x => x.Producto.Descripcion == "Shaman Express").ToList();
             }
         }
 

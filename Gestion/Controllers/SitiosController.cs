@@ -10,7 +10,6 @@ namespace Gestion.Controllers
     [Authorize(Roles = "Administrador")]
     public class SitiosController : Controller
     {
-
         private GestionDb db = new GestionDb();
 
         public ActionResult Index(string searchName = null, int page = 1)
@@ -31,7 +30,6 @@ namespace Gestion.Controllers
 
             return View(sites.ToPagedList(page, 6));
         }
-
         public ActionResult Details(int id = 0)
         {
             Sitio site = db.Sitios.Find(id);
@@ -70,7 +68,6 @@ namespace Gestion.Controllers
             return View(site);
         }
 
-
         [HttpPost]
         public ActionResult Edit(Sitio site)
         {
@@ -83,7 +80,6 @@ namespace Gestion.Controllers
             return View(site);
         }
 
-
         public ActionResult Delete(int id = 0)
         {
             Sitio site = db.Sitios.Find(id);
@@ -94,7 +90,6 @@ namespace Gestion.Controllers
             return View(site);
         }
 
-
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -103,7 +98,6 @@ namespace Gestion.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

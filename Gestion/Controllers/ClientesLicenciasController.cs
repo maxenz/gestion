@@ -37,7 +37,6 @@ namespace Gestion.Controllers
 
         }
 
-
         //
         // GET: /ClientesLicencias/Details/5
 
@@ -54,7 +53,7 @@ namespace Gestion.Controllers
             return PartialView("_ModulosExcluidos", prodMod);
         }
 
-        public String SetModExcluidos(int ClientesLicenciaID, int ProductoID, string[] vModExc)
+        public string SetModExcluidos(int ClientesLicenciaID, int ProductoID, string[] vModExc)
         {
 
             var cliProd = db.ClientesLicenciasProductos
@@ -163,6 +162,7 @@ namespace Gestion.Controllers
             {
                 ViewBag.Licencias = getLicenciasDisponibles();
                 ViewBag.ClienteID = new SelectList(db.Clientes, "ID", "RazonSocial");
+                getSites();
 
                 return View();
             }
@@ -211,6 +211,7 @@ namespace Gestion.Controllers
 
             ViewBag.ClienteID = new SelectList(db.Clientes, "ID", "RazonSocial", clienteslicencia.ClienteID);
             ViewBag.Licencias = getLicenciasDisponibles();
+            getSites();
             return View(clienteslicencia);
         }
 
@@ -231,6 +232,7 @@ namespace Gestion.Controllers
             }
             ViewBag.ClienteID = new SelectList(db.Clientes, "ID", "RazonSocial", clienteslicencia.ClienteID);
             ViewBag.Licencias = getLicenciasDisponibles(clienteslicencia.Licencia.ID);
+            getSites();
             return View(clienteslicencia);
 
         }
@@ -290,6 +292,7 @@ namespace Gestion.Controllers
             UpdateLicenciasProductos(selectedProductos, licenciaToUpdate);
 
             db.SaveChanges();
+            getSites();
 
             return RedirectToAction("Edit", "Clientes", new { id = db.ClientesLicencias.Find(cliLic.ID).ClienteID });
 
@@ -344,7 +347,6 @@ namespace Gestion.Controllers
 
         }
 
-
         //
         // GET: /ClientesLicencias/Delete/5
 
@@ -375,6 +377,15 @@ namespace Gestion.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        private void getSites()
+        {
+            List<Sitio> sites = new List<Sitio>();
+
+            sites = db.Sitios.ToList();
+
+            ViewBag.Sites = sites;
         }
     }
 }

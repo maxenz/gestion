@@ -245,10 +245,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\HtmlHelpers.cs" />
-    <Compile Include="Migrations\201605272027350_Sitios.cs" />
-    <Compile Include="Migrations\201605272027350_Sitios.Designer.cs">
-      <DependentUpon>201605272027350_Sitios.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -873,11 +869,6 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Gestion_wsCuentaCorriente_ClientesDocumentos</CachedSettingsPropName>
     </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605272027350_Sitios.resx">
-      <DependentUpon>201605272027350_Sitios.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

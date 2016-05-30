@@ -10,7 +10,6 @@ namespace Gestion.Models
     [Table("ClientesLicencias")]
     public class ClientesLicencia
     {
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
@@ -47,10 +46,35 @@ namespace Gestion.Models
         [Display(Name = "Servidor")]
         public String ConexionServidor { get; set; }
 
+        [Display(Name = "Sitio")]
+        [ForeignKey("Sitio")]
+        public int? SitioID { get; set; }
+
+        [Display(Name = "Puerto del Sitio")]
+        [Range(0, int.MaxValue, ErrorMessage = "Por favor, ingrese un número válido para el puerto.")]
+        public int? SitioPuerto { get; set; }
+
+        public string SitioSubDominio { get; set; }
+
         public virtual Cliente Cliente { get; set; }
         public virtual Licencia Licencia { get; set; }
-
+        public virtual Sitio Sitio { get; set; }
         public virtual IList<ClientesLicenciasProducto> ClientesLicenciasProductos { get; set; }
+
+        public virtual string FullUrl
+        {
+           get
+            {
+                if (this.SitioPuerto > 0)
+                {
+                    return string.Format("{0}:{1}", this.Sitio.Url, this.SitioPuerto);
+                } else
+                {
+                    return this.Sitio.Url;
+                }
+            }
+      
+        }
 
 
     }
