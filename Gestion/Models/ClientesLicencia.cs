@@ -65,6 +65,7 @@ namespace Gestion.Models
         {
            get
             {
+                if (this.Sitio == null) return string.Empty;
                 if (this.SitioPuerto > 0)
                 {
                     return string.Format("{0}:{1}", this.Sitio.Url, this.SitioPuerto);
