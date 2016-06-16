@@ -41,7 +41,10 @@
                                     }
 
                                     <td class="centrado">
-                                        <a href="#@item.ID" class="btn btn-small btn-success btn-actions various"><i class="btn-icon-only icon-facetime-video"></i></a>
+                                        @{ 
+                                            var linkVideo = string.Format("{0}/{1}/{2}.{3}", "http://200.49.156.125:57774", "videos_shaman", item.Alias, "mp4");
+                                        }
+                                        <a href="@linkVideo" target="_blank" class="btn btn-small btn-success btn-actions"><i class="btn-icon-only icon-facetime-video"></i></a>
                                     </td>
 
                                 </tr>

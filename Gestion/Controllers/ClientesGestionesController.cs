@@ -65,28 +65,33 @@ namespace Gestion.Controllers
         [HttpPost]
         public ActionResult Create(ClientesGestion clientesgestion, HttpPostedFileBase pdfDoc)
         {
-
-            if (clientesgestion.FechaRecontacto < DateTime.Now)
+            try
             {
-                clientesgestion.FechaRecontacto = new DateTime(1900, 1, 1);
-            }
-
-            if ((clientesgestion.Fecha != new DateTime(1,1,1)) && (clientesgestion.Observaciones != "") )
-            {
-                if (pdfDoc != null)
+                if (clientesgestion.FechaRecontacto < DateTime.Now)
                 {
-                    clientesgestion.PdfGestion = new byte[pdfDoc.ContentLength];
-                    pdfDoc.InputStream.Read(clientesgestion.PdfGestion, 0, pdfDoc.ContentLength);
+                    clientesgestion.FechaRecontacto = new DateTime(1900, 1, 1);
                 }
-                db.ClientesGestiones.Add(clientesgestion);
-                db.SaveChanges();
+
+                if ((clientesgestion.Fecha != new DateTime(1, 1, 1)) && (clientesgestion.Observaciones != ""))
+                {
+                    if (pdfDoc != null)
+                    {
+                        clientesgestion.PdfGestion = new byte[pdfDoc.ContentLength];
+                        pdfDoc.InputStream.Read(clientesgestion.PdfGestion, 0, pdfDoc.ContentLength);
+                    }
+                    db.ClientesGestiones.Add(clientesgestion);
+                    db.SaveChanges();
 
 
-                return RedirectToAction("Edit", "Clientes", new { id = clientesgestion.ClienteID });
+                    return RedirectToAction("Edit", "Clientes", new { id = clientesgestion.ClienteID });
+                }
+
+                ViewBag.ClienteID = clientesgestion.ClienteID;
+                return RedirectToAction("Create");
+            } catch (Exception exception) {
+                
+                return RedirectToAction("Create");
             }
-
-            ViewBag.ClienteID = clientesgestion.ClienteID;
-            return RedirectToAction("Create");
 
         }
 
