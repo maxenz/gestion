@@ -53,6 +53,14 @@ namespace Gestion.Models
         [Display(Name = "Puerto del Sitio")]
         [Range(0, int.MaxValue, ErrorMessage = "Por favor, ingrese un número válido para el puerto.")]
         public int? SitioPuerto { get; set; }
+        
+        public string Alias { get; set; }
+
+        [Display(Name =" Password configurable en Android app")]
+        public string AndroidPassword { get; set; }
+
+        [Display(Name = "Url configurable en Android app")]
+        public string AndroidUrl { get; set; }
 
         public string SitioSubDominio { get; set; }
 

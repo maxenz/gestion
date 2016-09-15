@@ -212,6 +212,7 @@
     <Compile Include="BootstrapSupport\ControlGroupExtensions.cs" />
     <Compile Include="BootstrapSupport\ViewHelperExtensions.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AndroidController.cs" />
     <Compile Include="Controllers\ClientesContactosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\ClientesGestionesController.cs" />
@@ -245,6 +246,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\HtmlHelpers.cs" />
+    <Compile Include="Migrations\201609151908272_ClientesLicencias.cs" />
+    <Compile Include="Migrations\201609151908272_ClientesLicencias.Designer.cs">
+      <DependentUpon>201609151908272_ClientesLicencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609152051381_GenericLogDescriptioj.cs" />
+    <Compile Include="Migrations\201609152051381_GenericLogDescriptioj.Designer.cs">
+      <DependentUpon>201609152051381_GenericLogDescriptioj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -869,6 +878,14 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Gestion_wsCuentaCorriente_ClientesDocumentos</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609151908272_ClientesLicencias.resx">
+      <DependentUpon>201609151908272_ClientesLicencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609152051381_GenericLogDescriptioj.resx">
+      <DependentUpon>201609152051381_GenericLogDescriptioj.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

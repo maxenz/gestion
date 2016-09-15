@@ -20,9 +20,11 @@ namespace Gestion.Models
         public int SolicitudID { get; set; }
 
         [Required]
-        public String IP { get; set; }
+        public string IP { get; set; }
 
-        public String Referencias { get; set; }
+        public string GenericDescription { get; set; }
+
+        public string Referencias { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime CreatedAt { get; set; }
