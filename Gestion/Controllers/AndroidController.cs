@@ -16,14 +16,15 @@ namespace Gestion.Controllers
         {
             try
             {
-                //context.Configuration.ProxyCreationEnabled = false;
+                HttpContext.Response.SuppressFormsAuthenticationRedirect = true;
                 setLoginLog(log);
                 ClientesLicencia objLogin = context.ClientesLicencias.Where(x => ((x.Alias == user) || (x.Licencia.Serial == user)) && (x.AndroidPassword == password)).FirstOrDefault();
 
                 if (objLogin == null)
                 {
 
-                    throw new HttpResponseException(HttpStatusCode.Unauthorized);
+                    Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                    return Json( new { Message = "Los datos de inicio de sesión son incorrectos."}, JsonRequestBehavior.AllowGet);
                 }
 
                 return Json(new
@@ -37,7 +38,8 @@ namespace Gestion.Controllers
             }
             catch (Exception exception)
             {
-                throw new HttpResponseException(HttpStatusCode.InternalServerError);
+                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Json(new { Message = exception.Message }, JsonRequestBehavior.AllowGet);
             }
 
         }
