@@ -85,6 +85,28 @@ namespace Gestion.Models
       
         }
 
+        public virtual string ConnectionString
+        {
+            get
+            {
+                bool emptyDataSource = string.IsNullOrEmpty(this.CnnDataSource);
+                bool emptyCatalog = string.IsNullOrEmpty(this.CnnCatalog);
+                bool emptyUser = string.IsNullOrEmpty(this.CnnUser);
+                bool emptyPassword = string.IsNullOrEmpty(this.CnnPassword);
+                if (!emptyDataSource && !emptyCatalog && !emptyUser && !emptyPassword)
+                {
+                    return string.Format("Data Source = {0}; Initial Catalog = {1}; User Id = {2}; Password = {3}",
+                        this.CnnDataSource,
+                        this.CnnCatalog,
+                        this.CnnUser,
+                        this.CnnPassword);
+                } else
+                {
+                    return null;
+                }
+            }
+        }
+
 
     }
 }

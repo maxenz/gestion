@@ -22,9 +22,7 @@ namespace Gestion.Controllers
 
                 if (objLogin == null)
                 {
-
-                    Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-                    return Json( new { Message = "Los datos de inicio de sesión son incorrectos."}, JsonRequestBehavior.AllowGet);
+                    return Json(new { Error = true, Message = "Los datos de inicio de sesión son incorrectos." }, "application/json", JsonRequestBehavior.AllowGet);
                 }
 
                 return Json(new
@@ -32,16 +30,43 @@ namespace Gestion.Controllers
                     Serial = objLogin.Licencia.Serial,
                     AndroidUrl = objLogin.AndroidUrl
                 },
+                "application/json",
                 JsonRequestBehavior.AllowGet
                 );
 
             }
             catch (Exception exception)
             {
-                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                return Json(new { Message = exception.Message }, JsonRequestBehavior.AllowGet);
+                return Json(new { Error = true, Message = exception.Message }, "application/json", JsonRequestBehavior.AllowGet);
             }
 
+        }
+
+        public JsonResult GetClientConnectionString(string serial)
+        {
+            try
+            {
+                HttpContext.Response.SuppressFormsAuthenticationRedirect = true;
+                ClientesLicencia license = context.ClientesLicencias.Where(x => ((x.Licencia.Serial == serial))).FirstOrDefault();
+
+                if (license == null || license.ConnectionString == null)
+                {
+                    return Json(new { Error = true, Message = "No se encontró connection string para el serial solicitado" }, "application/json", JsonRequestBehavior.AllowGet);
+                }
+
+                return Json(new
+                {
+                    ConnectionString = license.ConnectionString
+                },
+                "application/json",
+                JsonRequestBehavior.AllowGet
+                );
+
+            }
+            catch (Exception exception)
+            {
+                return Json(new { Error = true, Message = exception.Message }, "application/json", JsonRequestBehavior.AllowGet);
+            }
         }
 
         private void setLoginLog(string log)
