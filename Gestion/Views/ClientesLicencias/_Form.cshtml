@@ -115,6 +115,30 @@
                                 </div>
                             </div>
 
+                            <div class="control-group">
+                                <label class="control-label" for="FtpAndroidDir">Dirección Ftp para archivos de Android</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.FtpAndroidDir, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.FtpAndroidDir)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="FtpAndroidUser">Usuario Ftp para archivos de Android</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.FtpAndroidUser, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.FtpAndroidUser)
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="FtpAndroidPassword">Password Ftp para archivos de Android</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(model => model.FtpAndroidPassword, new { @class = "span5", autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.FtpAndroidPassword)
+                                </div>
+                            </div>
+
                             <br>
 
                             <div class="form-actions">

@@ -62,6 +62,15 @@ namespace Gestion.Models
         [Display(Name = "Url configurable en Android app")]
         public string AndroidUrl { get; set; }
 
+        [Display(Name = "Dirección Ftp para archivos de Android app")]
+        public string FtpAndroidDir { get; set; }
+
+        [Display(Name = "Usuario para Ftp de archivos de Android app")]
+        public string FtpAndroidUser { get; set; }
+
+        [Display(Name = "Password para Ftp de archivos de Android app")]
+        public string FtpAndroidPassword { get; set; }
+
         public string SitioSubDominio { get; set; }
 
         public virtual Cliente Cliente { get; set; }
@@ -96,7 +105,7 @@ namespace Gestion.Models
                 if (!emptyDataSource && !emptyCatalog && !emptyUser && !emptyPassword)
                 {
                     return string.Format("Data Source = {0}; Initial Catalog = {1}; User Id = {2}; Password = {3}",
-                        this.CnnDataSource,
+                        this.ConexionServidor,
                         this.CnnCatalog,
                         this.CnnUser,
                         this.CnnPassword);

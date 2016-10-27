@@ -254,6 +254,10 @@
     <Compile Include="Migrations\201609152051381_GenericLogDescriptioj.Designer.cs">
       <DependentUpon>201609152051381_GenericLogDescriptioj.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610271758551_FtpAndroid.cs" />
+    <Compile Include="Migrations\201610271758551_FtpAndroid.Designer.cs">
+      <DependentUpon>201610271758551_FtpAndroid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -885,6 +889,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609152051381_GenericLogDescriptioj.resx">
       <DependentUpon>201609152051381_GenericLogDescriptioj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610271758551_FtpAndroid.resx">
+      <DependentUpon>201610271758551_FtpAndroid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
