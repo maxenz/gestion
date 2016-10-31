@@ -69,6 +69,50 @@ namespace Gestion.Controllers
             }
         }
 
+        public JsonResult GetAndroidFtpData(string serial)
+        {
+            try
+            {
+                HttpContext.Response.SuppressFormsAuthenticationRedirect = true;
+                ClientesLicencia license = context.ClientesLicencias.Where(x => ((x.Licencia.Serial == serial))).FirstOrDefault();
+
+                if (license == null)
+                {
+                    return Json(new { Error = true, Message = "No se encontraron datos para la licencia solicitada." }, "application/json", JsonRequestBehavior.AllowGet);
+                }
+
+                if (license.FtpAndroidDir == null)
+                {
+                    return Json(new { Error = true, Message = "No se encontró la url del ftp para la licencia solicitada." }, "application/json", JsonRequestBehavior.AllowGet);
+                }
+
+                if (license.FtpAndroidUser == null)
+                {
+                    return Json(new { Error = true, Message = "No se encontró el usuario del ftp para la licencia solicitada." }, "application/json", JsonRequestBehavior.AllowGet);
+                }
+
+                if (license.FtpAndroidPassword == null)
+                {
+                    return Json(new { Error = true, Message = "No se encontró el password del ftp para la licencia solicitada." }, "application/json", JsonRequestBehavior.AllowGet);
+                }
+
+                return Json(new
+                {
+                    FtpAndroidDir = license.FtpAndroidDir,
+                    FtpAndroidUser = license.FtpAndroidUser,
+                    FtpAndroidPassword = license.FtpAndroidPassword
+                },
+                "application/json",
+                JsonRequestBehavior.AllowGet
+                );
+
+            }
+            catch (Exception exception)
+            {
+                return Json(new { Error = true, Message = exception.Message }, "application/json", JsonRequestBehavior.AllowGet);
+            }
+        }
+
         private void setLoginLog(string log)
         {
 
