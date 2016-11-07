@@ -69,6 +69,33 @@ namespace Gestion.Controllers
             }
         }
 
+        public JsonResult GetClientServerConnection(string serial)
+        {
+            try
+            {
+                HttpContext.Response.SuppressFormsAuthenticationRedirect = true;
+                ClientesLicencia license = context.ClientesLicencias.Where(x => ((x.Licencia.Serial == serial))).FirstOrDefault();
+
+                if (license == null || license.ConexionServidor == null)
+                {
+                    return Json(new { Error = true, Message = "No se encontró la server connection para el serial solicitado" }, "application/json", JsonRequestBehavior.AllowGet);
+                }
+
+                return Json(new
+                {
+                    ConexionServidor = license.ConexionServidor
+                },
+                "application/json",
+                JsonRequestBehavior.AllowGet
+                );
+
+            }
+            catch (Exception exception)
+            {
+                return Json(new { Error = true, Message = exception.Message }, "application/json", JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public JsonResult GetAndroidFtpData(string serial)
         {
             try
