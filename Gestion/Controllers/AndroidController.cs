@@ -145,8 +145,8 @@ namespace Gestion.Controllers
 
             LicenciasLog licenciasLog = new LicenciasLog();
             licenciasLog.SolicitudID = 3;
-            licenciasLog.IP = "0.0.0.0";
-            licenciasLog.GenericDescription = log;
+            licenciasLog.IP = "";
+            licenciasLog.GenericDescription = string.Format("Android : {0}", log);
             licenciasLog.CreatedAt = DateTime.Now;
             context.LicenciasLogs.Add(licenciasLog);
             context.SaveChanges();

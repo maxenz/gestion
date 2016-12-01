@@ -18,62 +18,91 @@ namespace Gestion.Controllers
 
         private GestionDb db = new GestionDb();
 
-        public ActionResult Index(string searchName = null, int page = 1, string fechaDesde = null, string fechaHasta = null)
+        public ActionResult Index(string searchName = null, int page = 1, string fechaDesde = null, string fechaHasta = null, string chkAndroidLogs = null)
         {
 
-            var margenMenor = DateTime.Now.AddDays(-3);
-            var hoy = DateTime.Now;
-            ViewBag.dftDesde = margenMenor.ToShortDateString();
-            ViewBag.dftHasta = hoy.ToShortDateString();
-            IQueryable<LicenciasLog> allLogs = db.LicenciasLogs;
-            var qLogs = new List<LogPrincipal>();
-
-            if (!String.IsNullOrEmpty(fechaDesde))
+            try
             {
-                fechaDesde = fechaDesde + " 00:00";
-                fechaHasta = fechaHasta + " 23:59";
+                var margenMenor = DateTime.Now.AddDays(-3);
+                var hoy = DateTime.Now;
+                ViewBag.dftDesde = margenMenor.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+                ViewBag.dftHasta = hoy.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+                IEnumerable<LicenciasLog> allLogs = null;
+                List<LogPrincipal> qLogs = new List<LogPrincipal>();
 
-                DateTime dtDesde = DateTime.ParseExact(fechaDesde, "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
-                DateTime dtHasta = DateTime.ParseExact(fechaHasta, "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
-
-                allLogs = allLogs.Where(a => a.CreatedAt >= dtDesde && a.CreatedAt <= dtHasta);
-            }
-            else
-            {
-                allLogs = db.LicenciasLogs.Where(a => a.CreatedAt >= margenMenor && a.CreatedAt <= hoy);
-            }
-
-            foreach (var log in allLogs)
-            {
-                qLogs.Add(new LogPrincipal
+                if (!String.IsNullOrEmpty(fechaDesde))
                 {
-                    Cliente = getCliente(log.LicenciaID),
-                    ClienteID = getCliID(log.LicenciaID),
-                    Serial = getSerial(log.LicenciaID),
-                    FechaHora = log.CreatedAt,
-                    IP = log.IP,
-                    Referencia = log.Referencias
-                });
-            }
+                    fechaDesde = fechaDesde + " 00:00";
+                    fechaHasta = fechaHasta + " 23:59";
 
-            if (!String.IsNullOrEmpty(searchName))
+                    DateTime dtDesde = DateTime.ParseExact(fechaDesde, "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
+                    DateTime dtHasta = DateTime.ParseExact(fechaHasta, "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
+                    allLogs = db.LicenciasLogs.Where(a => a.CreatedAt >= dtDesde && a.CreatedAt <= dtHasta).OrderByDescending(x => x.CreatedAt);
+                }
+                else
+                {
+                    allLogs = db.LicenciasLogs.Where(a => a.CreatedAt >= margenMenor && a.CreatedAt <= hoy).OrderByDescending(x => x.CreatedAt);
+                }
+
+                if (String.IsNullOrEmpty(chkAndroidLogs))
+                {
+                    allLogs = allLogs.Where(x => x.SolicitudID != 3).ToList();
+                }
+
+                foreach (var log in allLogs)
+                {
+                    ClientesLicencia cliLic = getClienteLicencia(log.LicenciaID);
+
+                    if (cliLic != null)
+                    {
+                        qLogs.Add(new LogPrincipal
+                        {
+                            Cliente = cliLic.Cliente == null ? cliLic.Cliente.RazonSocial : "Cliente sin razon social",
+                            ClienteID = cliLic.Cliente == null ? cliLic.Cliente.ID : 0,
+                            Serial = cliLic.Licencia == null ? cliLic.Licencia.Serial : "Cliente sin serial",
+                            FechaHora = log.CreatedAt,
+                            IP = log.IP,
+                            Referencia = log.Referencias
+                        });
+                    } else
+                    {
+                        qLogs.Add(new LogPrincipal
+                        {
+                            Cliente = "No es cliente",
+                            ClienteID = 0,
+                            Serial = "",
+                            FechaHora = log.CreatedAt,
+                            IP = log.IP,
+                            Referencia = log.Referencias
+                        });
+                    }
+
+
+                }
+
+                if (!String.IsNullOrEmpty(searchName))
+                {
+
+                    qLogs = qLogs.Where(p => p.Cliente.ToUpper().Contains(searchName.ToUpper()) ||
+                                        p.Serial.ToUpper().Contains(searchName.ToUpper()) ||
+                                        p.IP.ToUpper().Contains(searchName.ToUpper()) ||
+                                        p.Referencia.ToUpper().Contains(searchName.ToUpper())).ToList();
+                }
+
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("_Logs", qLogs.ToPagedList(page, 6));
+                }
+
+                return View(qLogs.ToPagedList(page, 6));
+            }
+            catch (Exception exception)
             {
-
-                qLogs = qLogs.Where(p => p.Cliente.ToUpper().Contains(searchName.ToUpper()) ||
-                                    p.Serial.ToUpper().Contains(searchName.ToUpper()) ||
-                                    p.IP.ToUpper().Contains(searchName.ToUpper()) ||
-                                    p.Referencia.ToUpper().Contains(searchName.ToUpper()))                                   
-                                    .ToList();
+                var ex = exception.Message;
+                return PartialView("_Logs", null);
             }
 
-            qLogs = qLogs.OrderByDescending(p => p.FechaHora).ToList();
-            
-            if (Request.IsAjaxRequest())
-            {
-                return PartialView("_Logs", qLogs.ToPagedList(page, 6));
-            }
 
-            return View(qLogs.ToPagedList(page, 6));
 
         }
 
@@ -96,21 +125,10 @@ namespace Gestion.Controllers
             }
         }
 
-        private String getCliente(int id)
+        private ClientesLicencia getClienteLicencia(int id)
         {
-            var cliente = db.ClientesLicencias
-                            .Where(c => c.LicenciaID == id)
-                            .Select(c => c.Cliente.RazonSocial)
-                            .FirstOrDefault();
 
-            if (cliente == null)
-            {
-                return "CLIENTE INEXISTENTE";
-            }
-            else
-            {
-                return cliente.ToString();
-            }
+            return db.ClientesLicencias.FirstOrDefault(x => x.LicenciaID == id);
 
         }
 

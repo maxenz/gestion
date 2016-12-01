@@ -84,7 +84,6 @@ namespace Gestion.Controllers
 
             if (!String.IsNullOrEmpty(searchName))
             {
-
                 qTickets = qTickets.Where(p => p.Cliente.ToUpper().Contains(searchName.ToUpper())).ToList();
             }
 
